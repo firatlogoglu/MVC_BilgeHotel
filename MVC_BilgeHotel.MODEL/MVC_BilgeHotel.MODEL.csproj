@@ -65,9 +65,27 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.CORE.dll" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.CORE.pdb" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.dll" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.pdb" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.dll" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.pdb" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\MVC_BilgeHotel.CORE.dll.config" />
+    <None Include="bin\Debug\MVC_BilgeHotel.MODEL.dll.config" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.CopyComplete" />
+    <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +93,10 @@
       <Project>{b2fa6ec5-079b-4b4e-8d57-c2fbff0c135e}</Project>
       <Name>MVC_BilgeHotel.CORE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

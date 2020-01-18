@@ -9,6 +9,8 @@ namespace MVC_BilgeHotel.CORE.Services
 {
     public interface ICoreService<T> where T : Entity.CoreEntity
     {
+        //TODO: ID'si INT OLANLARDA SORUN VAR
+
         //Ekleme İşlemleri-------------------------------------------
 
         //Tek Olarak Ekleme
@@ -47,7 +49,7 @@ namespace MVC_BilgeHotel.CORE.Services
         //Akifleri Listeleme
         List<T> GetActive();
 
-        List<T> GetGenelStatus(Expression<Func<T, bool>> expression);
+        List<T> GetGeneralStatus(Expression<Func<T, bool>> expression);
 
         //Hepsini Listeleme
         List<T> GetAll();
