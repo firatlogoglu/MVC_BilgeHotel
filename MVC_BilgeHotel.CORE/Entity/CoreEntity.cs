@@ -1,6 +1,7 @@
 ﻿using MVC_BilgeHotel.CORE.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -25,19 +26,21 @@ namespace MVC_BilgeHotel.CORE.Entity
         }
 
 
-        //TODO: 1.) ID TİPİ
-        //TODO: 2.) DELETED TİME EKLENECEK
         public Guid ID { get; set; }
 
+        [Display(Name = "Genel Durum:")]
         public GeneralStatus GeneralStatus { get; set; }
 
-
-
+        [Display(Name = "Oluşturma Tarihi:")]
         public DateTime? CreatedDate { get; set; }
+
+        [Display(Name = "Değiştirme Tarihi:")]
         public DateTime? ModifiedDate { get; set; }
 
-
+        [Display(Name = "Oluşturulan PC'nin Adı:")]
         public string CreatedComputerName { get; set; }
+
+        [Display(Name = "Değiştirilen PC'nin Adı:")]
         public string ModifiedComputerName { get; set; }
 
 

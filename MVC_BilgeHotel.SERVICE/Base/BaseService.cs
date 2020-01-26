@@ -1,6 +1,7 @@
 ﻿using MVC_BilgeHotel.CORE.Entity;
 using MVC_BilgeHotel.CORE.Services;
 using MVC_BilgeHotel.MODEL.Context;
+using MVC_BilgeHotel.MODEL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -92,11 +93,25 @@ namespace MVC_BilgeHotel.SERVICE.Base
 
         public void Update(T item)
         {
-            //TODO: T updated = GetByID(item); DÜZELTİLECEK
             T updated = db.Set<T>().Find(item.ID);
             DbEntityEntry entry = db.Entry(updated);
             entry.CurrentValues.SetValues(item);
             Save();
+        }
+
+
+        public void TCUpdate(Customer custumer)
+        {
+            
+            Customer customer = new Customer();
+
+            var cus = db.Customers.Where(s => s.TCNO == custumer.TCNO).FirstOrDefault<Customer>();
+            cus.User = true;
+            T updated = db.Set<T>().Find(cus.ID);
+            DbEntityEntry entry = db.Entry(updated);
+            entry.CurrentValues.SetValues(cus);
+            Save();
+
         }
     }
 }

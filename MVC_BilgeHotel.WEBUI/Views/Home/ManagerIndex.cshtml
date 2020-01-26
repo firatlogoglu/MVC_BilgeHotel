@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Hotel Yönetim Panelleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="btn-group">
+    @Html.ActionLink("Hotel Yönetim Paneli", "Login", "Account", new { area = "HotelManegement" }, new { @class = "btn btn-primary btn-block" })
+</div>
+<div class="btn-group">
+    @Html.ActionLink("Rezervasyon Yönetim Paneli", "Login", "Account", new { area = "BookingManagement" }, new { @class = "btn btn-primary btn-block" })
+
+</div>

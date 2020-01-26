@@ -17,7 +17,6 @@ namespace MVC_BilgeHotel.MODEL.Migrations
         {
             SampleData data = new SampleData();
             data.InitializeDatabase(context);
-
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

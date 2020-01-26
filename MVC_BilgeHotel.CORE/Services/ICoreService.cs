@@ -9,8 +9,6 @@ namespace MVC_BilgeHotel.CORE.Services
 {
     public interface ICoreService<T> where T : Entity.CoreEntity
     {
-        //TODO: ID'si INT OLANLARDA SORUN VAR
-
         //Ekleme İşlemleri-------------------------------------------
 
         //Tek Olarak Ekleme
@@ -40,8 +38,6 @@ namespace MVC_BilgeHotel.CORE.Services
 
         //Tekli Olarak Getirme
         T GetByID(T ID);
-
-        //TODO: 4.)  ID SONRA AYARLA
 
         //Varsayılanı/Kategori olarak Getirme
         T GetByDefault(Expression<Func<T, bool>> expression);

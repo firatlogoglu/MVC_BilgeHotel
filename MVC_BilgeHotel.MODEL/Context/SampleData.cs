@@ -14,18 +14,67 @@ namespace MVC_BilgeHotel.MODEL.Context
         protected override void Seed(ProjectContext context)
         {
             //TODO: SEED BASMAMA SORUNU
-            IList<Room> rooms = new List<Room>();
-
-            rooms.Add(new Room() { ID = Guid.NewGuid(), RoomNumber = "12", RoomStatus = Enums.RoomStatus.Full, Capacity = 12 }); 
-            rooms.Add(new Room() { ID = Guid.NewGuid(), RoomNumber = "13", RoomStatus = Enums.RoomStatus.Full, Capacity = 12 }); 
-            
-            context.Rooms.AddRange(rooms);
-
-            base.Seed(context);
 
             //
             //            SampleData data = new SampleData();
             //      data.InitializeDatabase(context);
+
+            #region Odalar
+            IList<Room> rooms = new List<Room>();
+
+            rooms.Add(new Room() { ID = Guid.NewGuid(), RoomNumber = "001", RoomStatus = Enums.RoomStatus.Full, Capacity = 1 });
+            rooms.Add(new Room() { ID = Guid.NewGuid(), RoomNumber = "002", RoomStatus = Enums.RoomStatus.Full, Capacity = 1 });
+
+            context.Rooms.AddRange(rooms);
+            #endregion
+
+            #region Çalışanlar
+
+            IList<Employee> employees = new List<Employee>();
+
+            employees.Add(new Employee()
+            {
+                ID = Guid.NewGuid(),
+                BirthDate = new DateTime(1994, 4, 1),
+                BirthPlace = "Biga",
+                FirstName = "Fırat",
+                SurName = "Loğoğlu",
+                Gender = CORE.Enums.Gender.Male,
+                Password = "1234",
+                TCNO = "11111111",
+                Role = Enums.Roles.Receptionist,
+                EmailAddress = "firat@mmm.com",
+                GeneralStatus = CORE.Enums.GeneralStatus.Active
+            });
+
+            context.Employees.AddRange(employees);
+
+            #endregion
+
+            #region Müşteriler
+            IList<Customer> customers = new List<Customer>();
+
+            customers.Add(new Customer()
+            {
+                ID = Guid.NewGuid(),
+                TCNO = "22222222222",
+                FirstName = "Fırat",
+                SurName = "Loğoğlu",
+                EmailAddress = "firatlogoglu@mmm.com",
+                Gender = CORE.Enums.Gender.Male,                
+                User = false,              
+                BirthDate = new DateTime(1994, 1, 4),
+                BirthPlace = "Biga",
+                Password = "1234",
+                PhoneNumber = "05555555555"
+                
+            });
+
+            context.Customers.AddRange(customers);
+            #endregion
+
+
+            base.Seed(context);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.MODEL.Enums;
 using MVC_BilgeHotel.SERVICE.Base;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,16 @@ namespace MVC_BilgeHotel.SERVICE.Options
         public bool CheckEmpoyeeUsers(string _email, string _password)
         {
             return Any(x => x.EmailAddress == _email && x.Password == _password);
+        }
+
+        public bool CheckEmpoyeeRole(Roles _role)
+        {
+            return Any(x => x.Role == _role);
+        }
+
+        public bool CheckEmpoyeeTCNO(string _tcno)
+        {
+            return Any(x => x.TCNO == _tcno);
         }
     }
 }

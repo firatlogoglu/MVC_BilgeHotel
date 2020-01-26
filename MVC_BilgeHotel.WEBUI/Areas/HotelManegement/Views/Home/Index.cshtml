@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Room>
+@{
+    ViewBag.Title = "Hotel Yönetimi Anasayfası";
+    Layout = "~/Areas/HotelManegement/Views/Shared/_HMHLayout.cshtml";
+}
+
+<h2>@ViewBag.Title - @TempData["EmployeeUser"] Hoşgeldiniz</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomStatus)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID, @class = "btn btn-xs btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID, @class = "btn btn-xs btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID, @class = "btn btn-xs btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

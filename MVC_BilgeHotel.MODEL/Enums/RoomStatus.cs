@@ -8,10 +8,7 @@ namespace MVC_BilgeHotel.MODEL.Enums
 {
     public enum RoomStatus
     {
-
-        //TODO: ODA DURUMLARI EKLE
         Empty=1,
         Full=2,
-
     }
 }
