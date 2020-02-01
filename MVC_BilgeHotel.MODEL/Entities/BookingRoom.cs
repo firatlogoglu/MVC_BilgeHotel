@@ -10,6 +10,8 @@ namespace MVC_BilgeHotel.MODEL.Entities
     public class BookingRoom: CoreEntity
     {
         //TODO: BookingRoom protetyler tanımlanacak
+        public Guid RoomID { get; set; }
 
+        public Guid BookingID { get; set; }
     }
 }

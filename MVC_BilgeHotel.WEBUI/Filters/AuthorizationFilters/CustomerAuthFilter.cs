@@ -12,7 +12,7 @@ namespace MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters
         {
             if (filterContext.HttpContext.Session["CLogin"] == null)
             {
-                filterContext.Result = new RedirectResult("~/Booking/Account/Login");
+                filterContext.Result = new RedirectResult("~/BookingC/Account/Login");
             }
         }
     }

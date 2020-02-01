@@ -29,15 +29,15 @@ namespace MVC_BilgeHotel.MODEL.Context
             modelBuilder.Configurations.Add(new EmployeeMap());
             modelBuilder.Configurations.Add(new BookingMap());
             modelBuilder.Configurations.Add(new BookingRoomMap());
-
+            modelBuilder.Configurations.Add(new CustomerBookingMap());
             base.OnModelCreating(modelBuilder);
         }
-        //TODO: MAPPING YAPILACAK
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<BookingRoom> BookingRooms { get; set; }
+        public DbSet<CustomerBooking> CustomerBookings { get; set; }
     }
 }

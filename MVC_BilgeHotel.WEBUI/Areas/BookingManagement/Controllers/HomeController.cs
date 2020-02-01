@@ -1,4 +1,5 @@
-﻿using MVC_BilgeHotel.SERVICE.Options;
+﻿using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;
@@ -12,19 +13,25 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
 
     public class HomeController : Controller
     {
-        EmployeeService db;
+        EmployeeService esdb;
+        RoomService rmsdb;
 
         public HomeController()
         {
-            if (db == null)
+            if (esdb == null)
             {
-                db = new EmployeeService();
+                esdb = new EmployeeService();
+            }
+
+            if(rmsdb == null)
+            {
+                rmsdb = new RoomService();
             }
         }
 
-        public ActionResult Index()
+        public ActionResult Index(Room model)
         {
-            return View();
+            return View(rmsdb.GetRoomEmtpy(model));
         }
     }
 }

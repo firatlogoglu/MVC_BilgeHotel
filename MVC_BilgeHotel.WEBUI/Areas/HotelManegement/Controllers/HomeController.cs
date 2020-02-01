@@ -14,10 +14,12 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
     {
         // GET: HotelManegement/Home
         RoomService db = new RoomService();
-        public ActionResult Index(Room Model)
-        {
+        EmployeeService emps = new EmployeeService();
 
-            return View(db.GetActive().ToList());
+        public ActionResult Index(Room model)
+        {
+            return View(db.GetRoomEmtpy(model));
         }
+       
     }
 }

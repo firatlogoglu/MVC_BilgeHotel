@@ -1,4 +1,6 @@
-﻿using MVC_BilgeHotel.MODEL.Entities;
+﻿using MVC_BilgeHotel.MODEL.Context;
+using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.MODEL.Enums;
 using MVC_BilgeHotel.SERVICE.Base;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,35 @@ namespace MVC_BilgeHotel.SERVICE.Options
 {
     public class RoomService : BaseService<Room>
     {
-        //todo: odanın dolu olup olamdığı yap
+        private static ProjectContext _database;
+        private static ProjectContext db
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    _database = new ProjectContext();
+                }
+                return _database;
+            }
+        }
+
+        public List<Room> GetRoomEmtpy(Room room)
+        {
+            return db.Set<Room>().Where(x => x.RoomStatus == MVC_BilgeHotel.MODEL.Enums.RoomStatus.Empty).ToList();
+
+        }
+
+        //public List<Room> GetRoomEmtpyToDay(Room room)
+        //{
+        //    var ee = from r in db.Rooms
+        //             select new
+        //             {
+        //                 Roomsi =
+        //                 Bo = r.BookingRooms.
+        //    }
+        //    return
+
+        //}
     }
 }

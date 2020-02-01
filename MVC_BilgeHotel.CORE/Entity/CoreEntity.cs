@@ -28,19 +28,21 @@ namespace MVC_BilgeHotel.CORE.Entity
 
         public Guid ID { get; set; }
 
-        [Display(Name = "Genel Durum:")]
+        [Display(Name = "Genel Durum")]
         public GeneralStatus GeneralStatus { get; set; }
 
-        [Display(Name = "Oluşturma Tarihi:")]
+        [Display(Name = "Oluşturma Tarihi")]
         public DateTime? CreatedDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
 
-        [Display(Name = "Değiştirme Tarihi:")]
+        [Display(Name = "Değiştirme Tarihi")]
         public DateTime? ModifiedDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
 
-        [Display(Name = "Oluşturulan PC'nin Adı:")]
+        [Display(Name = "Oluşturulan PC'nin Adı")]
         public string CreatedComputerName { get; set; }
 
-        [Display(Name = "Değiştirilen PC'nin Adı:")]
+        [Display(Name = "Değiştirilen PC'nin Adı")]
         public string ModifiedComputerName { get; set; }
 
 

@@ -1,8 +1,45 @@
-﻿
+﻿@model IEnumerable<Room>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Booking/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Boş Odalar";
+    Layout = "~/Areas/BookingManagement/Views/Shared/_BookingHLLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Boş Odalar</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomTypes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneralStatus)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@item.ImagePath" style="width:30px; height:30px" />
+            </td>
+            <td>@item.RoomNumber</td>
+            <td>@item.Capacity</td>
+            <td>@item.RoomStatus</td>
+            <td>@item.RoomTypes</td>
+            <td>@item.GeneralStatus</td>
+        </tr>
+    }
+
+</table>

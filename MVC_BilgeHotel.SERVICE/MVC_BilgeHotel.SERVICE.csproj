@@ -51,6 +51,7 @@
     <Compile Include="Base\BaseService.cs" />
     <Compile Include="Options\BookingRoomService.cs" />
     <Compile Include="Options\BookingService.cs" />
+    <Compile Include="Options\CustomerBookingService.cs" />
     <Compile Include="Options\CustomerService.cs" />
     <Compile Include="Options\EmployeeService.cs" />
     <Compile Include="Options\RoomService.cs" />

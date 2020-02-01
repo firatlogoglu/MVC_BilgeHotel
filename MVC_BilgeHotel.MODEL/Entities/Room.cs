@@ -11,14 +11,25 @@ namespace MVC_BilgeHotel.MODEL.Entities
 {
     public class Room : CoreEntity
     {
-        [Display(Name = "Oda No:")]
+        [Display(Name = "Oda No")]
+        [Required(ErrorMessage = "Oda Numarasının Girilmesi Zorunludur!")]
         public string RoomNumber { get; set; }
 
-        [Display(Name = "Kapasite:")]
+        [Display(Name = "Kapasite")]
+        [Required(ErrorMessage = "Oda Kapasitesinin Girilmesi Zorunludur!")]
+        [Range(1, 8, ErrorMessage ="{0}")]
         public int Capacity { get; set; }
 
-        [Display(Name = "Oda Durumu:")]
+        [Display(Name = "Oda Durumu")]
+        [Required(ErrorMessage = "Oda Durumunun Girilmesi Zorunludur!")]
+
         public RoomStatus RoomStatus { get; set; }
+
+        [Display(Name = "Resim")]
+        public string ImagePath { get; set; }
+
+        [Display(Name = "Tür")]
+        public RoomTypes RoomTypes { get; set; }
 
         public virtual List<BookingRoom> BookingRooms { get; set; }
     }

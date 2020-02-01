@@ -1,5 +1,6 @@
 ﻿using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
+using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,13 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
             {
                 TempData["Error"] = exp.Message;
             }
+            return RedirectToAction("Login");
+        }
+
+        [BookingMAuthFilter]
+        public ActionResult Logout()
+        {
+            Session.Remove("BMLogin");
             return RedirectToAction("Login");
         }
     }

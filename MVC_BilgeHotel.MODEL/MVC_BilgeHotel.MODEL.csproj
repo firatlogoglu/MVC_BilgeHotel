@@ -53,12 +53,17 @@
     <Compile Include="Entities\Booking.cs" />
     <Compile Include="Entities\BookingRoom.cs" />
     <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\CustomerBooking.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Room.cs" />
+    <Compile Include="Enums\BookingPackages.cs" />
     <Compile Include="Enums\Roles.cs" />
     <Compile Include="Enums\RoomStatus.cs" />
+    <Compile Include="Enums\RoomTypes.cs" />
+    <Compile Include="Enums\Shifts.cs" />
     <Compile Include="Map\BookingMap.cs" />
     <Compile Include="Map\BookingRoomMap.cs" />
+    <Compile Include="Map\CustomerBookingMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\EmployeeMap.cs" />
     <Compile Include="Map\RoomMap.cs" />

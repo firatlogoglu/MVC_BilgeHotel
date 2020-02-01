@@ -12,7 +12,7 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public BookingRoomMap()
         {
-            //TODO: MAPPING YAPILACAK
+
         }
     }
 }

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/HotelManegement/Views/Shared/_HMHLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.TCNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostomerCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneralStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedComputerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedComputerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedIP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedIP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedComputerUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedComputerUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUserID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.TCNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostomerCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GeneralStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedComputerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedComputerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedIP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedIP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedComputerUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedComputerUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

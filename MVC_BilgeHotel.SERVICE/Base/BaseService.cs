@@ -51,6 +51,7 @@ namespace MVC_BilgeHotel.SERVICE.Base
 
         }
 
+
         public List<T> GetAll()
         {
             return db.Set<T>().ToList();
@@ -61,7 +62,7 @@ namespace MVC_BilgeHotel.SERVICE.Base
             return db.Set<T>().Where(expression).FirstOrDefault();
         }
 
-        public T GetByID(T ID)
+        public T GetByID(Guid ID)
         {
             return db.Set<T>().Find(ID);
         }
@@ -113,5 +114,12 @@ namespace MVC_BilgeHotel.SERVICE.Base
             Save();
 
         }
+        public void AA()
+        {
+            //var bookings = db.Bookings.Include(b => b.Customer).ToString();
+
+        }
+           
+
     }
 }

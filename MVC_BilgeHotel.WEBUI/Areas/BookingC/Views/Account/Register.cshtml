@@ -1,0 +1,49 @@
+﻿@model Customer
+@{
+    ViewBag.Title = "Kayıt Ol";
+    Layout = "~/Areas/BookingC/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-signin", enctype = "multipart/form-data" }))
+{
+    <h2 class="form-signin-heading">@ViewBag.Title</h2>
+    <div class="login-wrap">
+        <p>Kişisel bilgilerinizi girin</p>
+        @Html.ValidationMessageFor(x => x.TCNO, null, new { @class = "text-danger" })
+        <span class="text-danger">@ViewBag.TC</span>
+        @Html.TextBoxFor(x => x.TCNO, new { type = "text", @class = "form-control", placeholder = "TC Kimlik No", autofocus = "autofocus" })
+
+
+        @Html.ValidationMessageFor(x => x.FirstName, null, new { @class = "text-danger" })
+        @Html.TextBoxFor(x => x.FirstName, new { type = "text", @class = "form-control", placeholder = "Ad" })
+
+
+        @Html.ValidationMessageFor(x => x.SurName, null, new { @class = "text-danger" })
+        @Html.TextBoxFor(x => x.SurName, new { type = "text", @class = "form-control", placeholder = "Soyad" })
+
+        <span class="text-danger">@ViewBag.ExistsEmail</span>
+        @Html.ValidationMessageFor(x => x.EmailAddress, null, new { @class = "text-danger" })
+        @Html.TextBoxFor(x => x.EmailAddress, new { type = "text", @class = "form-control", placeholder = "E-Posta" })
+
+        @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+        @Html.TextBoxFor(x => x.Password, new { type = "password", @class = "form-control", placeholder = "Şifre" })
+
+        @Html.TextAreaFor(x => x.Address, new { @class = "form-control", style = "margin-bottom:15px", placeholder = "Adres" })
+
+
+        @Html.TextBoxFor(x => x.PhoneNumber, new { type = "text", @class = "form-control", placeholder = "Telefon", data_mask = "0 (599) 999 99 99" })
+
+        @Html.TextBoxFor(x => x.BirthDate, new { type = "text", @class = "form-control default-date-picker", placeholder = "Doğum Tarihi", data_mask = "99/99/9999" })
+
+        @Html.TextBoxFor(x => x.BirthPlace, new { type = "text", @class = "form-control", placeholder = "Doğum Yeri" })
+
+        @Html.EnumDropDownListFor(x => x.Gender, htmlAttributes: new { @class = "form-control" })
+
+        <button class="btn btn-lg btn-login btn-block" type="submit">@ViewBag.Title</button>
+        <div class="registration">
+            <a class="" href="@Url.Action("Login", "Account")">
+                Oturum aç
+            </a>
+        </div>
+    </div>
+}

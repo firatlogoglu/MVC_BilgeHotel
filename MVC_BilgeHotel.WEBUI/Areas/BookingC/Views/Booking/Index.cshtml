@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BookingC/Views/Shared/_BookingCLLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Yeni Rezervasyon Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostomerCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Package)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerBookingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingRoomID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneralStatus)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostomerCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Package)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerBookingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingRoomID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GeneralStatus)
+        </td>
+    </tr>
+}
+
+</table>

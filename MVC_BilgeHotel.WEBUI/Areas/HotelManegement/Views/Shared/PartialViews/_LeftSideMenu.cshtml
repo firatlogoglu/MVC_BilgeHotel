@@ -1,8 +1,8 @@
 ﻿<ul class="navbar navbar-default navbar-left">
-    @Html.ActionLink("Personeller", "Login", "Account", new { area = "Booking" }, new { @class = "btn btn-lg btn-block" })
+    @Html.ActionLink("Personeller", "Index", "Employee", new { area = "HotelManegement" }, new { @class = "btn btn-lg btn-block" })
 
-    @Html.ActionLink("Rezervasyon", "Login", "Account", new { area = "Booking" }, new { @class = "btn btn-lg btn-block" })
-    @Html.ActionLink("Rezervasyon", "Login", "Account", new { area = "Booking" }, new { @class = "btn btn-lg btn-block" })
+    @Html.ActionLink("Odalar", "Index", "Room", new { area = "HotelManegement" }, new { @class = "btn btn-lg btn-block" })
+    @Html.ActionLink("Kampanyalar", "Login", "Account", new { area = "HotelManegement" }, new { @class = "btn btn-lg btn-block" })
 
-    @Html.ActionLink("Rezervasyon", "Login", "Account", new { area = "Booking" }, new { @class = "btn btn-lg btn-block" })
+    @Html.ActionLink("Oturumu Kapat", "Logout", "Account", new { area = "HotelManegement" }, new { @class = "btn btn-lg btn-block" })
 </ul>

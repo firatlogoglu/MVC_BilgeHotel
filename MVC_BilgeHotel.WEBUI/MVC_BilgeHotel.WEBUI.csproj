@@ -126,14 +126,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\BookingC\BookingCAreaRegistration.cs" />
+    <Compile Include="Areas\BookingC\Controllers\AccountController.cs" />
+    <Compile Include="Areas\BookingC\Controllers\BookingController.cs" />
+    <Compile Include="Areas\BookingC\Controllers\HomeController.cs" />
     <Compile Include="Areas\BookingManagement\BookingManagementAreaRegistration.cs" />
     <Compile Include="Areas\BookingManagement\Controllers\AccountController.cs" />
+    <Compile Include="Areas\BookingManagement\Controllers\BookingController.cs" />
     <Compile Include="Areas\BookingManagement\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Booking\BookingAreaRegistration.cs" />
-    <Compile Include="Areas\Booking\Controllers\AccountController.cs" />
-    <Compile Include="Areas\Booking\Controllers\HomeController.cs" />
     <Compile Include="Areas\HotelManegement\Controllers\AccountController.cs" />
+    <Compile Include="Areas\HotelManegement\Controllers\BookingController.cs" />
+    <Compile Include="Areas\HotelManegement\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\HotelManegement\Controllers\HomeController.cs" />
+    <Compile Include="Areas\HotelManegement\Controllers\RoomController.cs" />
     <Compile Include="Areas\HotelManegement\HotelManegementAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\AuthorizationFilters\CustomerAuthFilter.cs" />
@@ -154,6 +159,8 @@
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MVC_BilgeHotel.COMMON.dll" />
+    <Content Include="bin\MVC_BilgeHotel.COMMON.pdb" />
     <Content Include="bin\MVC_BilgeHotel.CORE.dll" />
     <Content Include="bin\MVC_BilgeHotel.CORE.pdb" />
     <Content Include="bin\MVC_BilgeHotel.MODEL.dll" />
@@ -218,20 +225,13 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="Areas\Booking\Views\web.config" />
-    <Content Include="Areas\Booking\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Booking\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Booking\Views\Account\Login.cshtml" />
     <Content Include="Areas\BookingManagement\Views\web.config" />
     <Content Include="Areas\BookingManagement\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Account\Login.cshtml" />
-    <Content Include="Areas\Booking\Views\Account\Register.cshtml" />
-    <Content Include="Areas\Booking\Views\Account\RegisterSuccess.cshtml" />
     <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.CopyComplete" />
     <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csprojAssemblyReference.cache" />
     <Content Include="Areas\BookingManagement\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Booking\Views\Home\Index.cshtml" />
     <Content Include="Areas\HotelManegement\Views\web.config" />
     <Content Include="Areas\HotelManegement\Views\_ViewStart.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Shared\_Layout.cshtml" />
@@ -251,6 +251,30 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Areas\HotelManegement\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Employee\Create.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Room\Index.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Room\Create.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Employee\Edit.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Room\Edit.cshtml" />
+    <Content Include="bin\MVC_BilgeHotel.COMMON.dll.config" />
+    <Content Include="Areas\BookingC\Views\web.config" />
+    <Content Include="Areas\BookingC\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\BookingC\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\BookingC\Views\Account\Login.cshtml" />
+    <Content Include="Areas\BookingC\Views\Account\Register.cshtml" />
+    <Content Include="Areas\BookingC\Views\Account\RegisterSuccess.cshtml" />
+    <Content Include="Areas\BookingC\Views\Home\Index.cshtml" />
+    <Content Include="Areas\BookingC\Views\Shared\PartialViews\_LeftSideMenu.cshtml" />
+    <Content Include="Areas\BookingC\Views\Shared\_BookingCLLayout.cshtml" />
+    <Content Include="Areas\BookingC\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\BookingC\Views\Booking\Create.cshtml" />
+    <Content Include="Areas\BookingManagement\Views\Shared\PartialViews\_LeftSideMenu.cshtml" />
+    <Content Include="Areas\BookingManagement\Views\Shared\_BookingHLLayout.cshtml" />
+    <Content Include="Areas\BookingManagement\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\BookingManagement\Views\Booking\Create.cshtml" />
+    <Content Include="Areas\BookingManagement\Views\Booking\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -262,6 +286,17 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyScripts.js" />
+    <Content Include="Uploads\Img\Employee\receptionist.jpg" />
+    <Content Include="Uploads\Img\Employee\receptionist2.jpg" />
+    <Content Include="Uploads\Img\noimage.jpg" />
+    <Content Include="Uploads\Img\Rooms\DoubleRoom.jpg" />
+    <Content Include="Uploads\Img\Rooms\KingRoom.jpg" />
+    <Content Include="Uploads\Img\Rooms\QuadRoom.jpg" />
+    <Content Include="Uploads\Img\Rooms\SingleRoom.jpg" />
+    <Content Include="Uploads\Img\Rooms\triple2.jpg" />
+    <Content Include="Uploads\Img\Rooms\TripleRoom.jpg" />
+    <Content Include="Uploads\Img\Rooms\TwinRoom.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -282,8 +317,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\BookingC\Data\" />
     <Folder Include="Areas\BookingManagement\Data\" />
-    <Folder Include="Areas\Booking\Data\" />
     <Folder Include="Areas\HotelManegement\Data\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
@@ -302,6 +337,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MVC_BilgeHotel.COMMON\MVC_BilgeHotel.COMMON.csproj">
+      <Project>{61A3D04A-0BCA-4473-ACE9-941FF71B9902}</Project>
+      <Name>MVC_BilgeHotel.COMMON</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVC_BilgeHotel.CORE\MVC_BilgeHotel.CORE.csproj">
       <Project>{b2fa6ec5-079b-4b4e-8d57-c2fbff0c135e}</Project>
       <Name>MVC_BilgeHotel.CORE</Name>

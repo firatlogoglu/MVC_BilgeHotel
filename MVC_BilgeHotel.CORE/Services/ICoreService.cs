@@ -36,9 +36,6 @@ namespace MVC_BilgeHotel.CORE.Services
 
         //Getirme İşlemleri-----------------------------------------
 
-        //Tekli Olarak Getirme
-        T GetByID(T ID);
-
         //Varsayılanı/Kategori olarak Getirme
         T GetByDefault(Expression<Func<T, bool>> expression);
 

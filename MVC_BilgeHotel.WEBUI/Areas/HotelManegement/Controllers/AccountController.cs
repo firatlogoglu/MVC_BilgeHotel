@@ -1,5 +1,6 @@
 ﻿using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
+using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,9 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
                 if (model.Password != null && model.EmailAddress != string.Empty)
                 {
                     if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password))
+                    //if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password) && model.Role == MODEL.Enums.Roles.Manager)
                     {
+                        //TODO: Yekilendirilme yapılamadı model
                         var employeeUser = db.GetByDefault(x => x.EmailAddress == model.EmailAddress);
                         Session["HMLogin"] = employeeUser;
 
@@ -44,7 +47,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
                     }
                     else
                     {
-                        TempData["Error"] = "Lüften E-Posta Adresiniz ve/veya Şifrenizi Kontrol Ediniz";
+                        TempData["Error"] = "Lüften E-Posta Adresiniz ve/veya Şifrenizi Kontrol Ediniz ve/veya Yekiniz Yok";
                     }
                 }
                 else
@@ -56,6 +59,13 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             {
                 TempData["Error"] = exp.Message;
             }
+            return RedirectToAction("Login");
+        }
+
+        [HotelMAuthFilter]
+        public ActionResult Logout()
+        {
+            Session.Remove("HMLogin");
             return RedirectToAction("Login");
         }
     }

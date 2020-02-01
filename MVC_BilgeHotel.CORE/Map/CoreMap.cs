@@ -25,14 +25,4 @@ namespace MVC_BilgeHotel.CORE.Map
             Property(x => x.ModifiedComputerUsername).HasMaxLength(50).HasColumnName("MdfCUsrName");
         }
     }
-    //TODO: Hata!!
-
-    //public class PersonMap<T>: EntityTypeConfiguration<T> where T : PersonEntity
-    //{
-    //    public PersonMap()
-    //    {
-    //        Property(x => x.FirstName).HasMaxLength(50).HasColumnName("Isim");
-    //        Property(x => x.SurName).HasMaxLength(50);
-    //    }
-    //}
 }
