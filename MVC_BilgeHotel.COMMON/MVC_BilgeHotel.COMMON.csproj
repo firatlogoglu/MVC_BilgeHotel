@@ -55,7 +55,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\MVC_BilgeHotel.COMMON.dll.config" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.CopyComplete" />
+    <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.COMMON.dll" />
+    <Content Include="bin\Debug\MVC_BilgeHotel.COMMON.pdb" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.dll" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

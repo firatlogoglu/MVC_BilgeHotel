@@ -18,6 +18,9 @@ namespace MVC_BilgeHotel.COMMON.Tools
         /// <param name="subject">Konuyu</param>
         public static void SendEmail(string email, string message, string subject)
         {
+            //TODO: Class isminin sonundaki "[Copy(Kopyası)]" yazıyı silin ve projeye dahil edin.
+
+
             //TODO: EMAILADDRESS kısımlarına Hotelin E-Posta adressi gelecek.
             //TODO: EMAILPASSWORD kısmına E-Posta sifreniz gelecek.
             //TODO: SMTP Port'u Varsayılan olarak 587 olarak verilmiştir, hotelin kullandığı e-posta servisini kendi portunu yazınız.
