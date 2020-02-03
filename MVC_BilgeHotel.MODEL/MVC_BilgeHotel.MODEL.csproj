@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\ProjectContext.cs" />
     <Compile Include="Context\SampleData.cs" />
     <Compile Include="Entities\Booking.cs" />
     <Compile Include="Entities\BookingRoom.cs" />
