@@ -10,6 +10,12 @@
 *.userosscache
 *.sln.docstates
 
+#SQL Sunucu Yol ve sifre
+/MVC_BilgeHotel.MODEL/Context/ProjectContext.cs
+
+#Email Adressi ve Sifre
+/MVC_BilgeHotel.COMMON/Tools/MailSender.cs
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
