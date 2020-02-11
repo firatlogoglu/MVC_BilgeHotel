@@ -18,7 +18,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         public ActionResult Index()
         {
 
-            return View(bsdb.GetAll().ToList());
+            return View();
 
 
         }

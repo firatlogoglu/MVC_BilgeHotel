@@ -1,9 +1,11 @@
-﻿using MVC_BilgeHotel.MODEL.Entities;
+﻿using MVC_BilgeHotel.COMMON.Tools;
+using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,7 +35,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             {
                 if (model.Password != null && model.EmailAddress != string.Empty)
                 {
-                    if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password))
+                    if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password, MODEL.Enums.Roles.Manager))
                     //if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password) && model.Role == MODEL.Enums.Roles.Manager)
                     {
                         //TODO: Yekilendirilme yapılamadı model
@@ -67,6 +69,47 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         {
             Session.Remove("HMLogin");
             return RedirectToAction("Login");
+        }
+
+        [HotelMAuthFilter]
+        public ActionResult AccountDetail()
+        {
+
+            var employeeUserDetail = Session["HMLogin"] as Employee;
+            TempData["EmployeeUser"] = employeeUserDetail.FirstName + " " + employeeUserDetail.SurName;
+            
+            return View(db.GetByID(employeeUserDetail.ID));
+        }
+
+        EmployeeService emps = new EmployeeService();
+
+        [HotelMAuthFilter]
+        [HttpPost]
+        //TODO: DENECEK  [HotelMAuthFilter]
+        public ActionResult AccountDetail(Employee model, HttpPostedFileBase ImagePath)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODO: Düzenleme sırasında resim değişmediğinde resimi boş olarak değiştiriyor.
+                model.ModifiedComputerName = Environment.MachineName;
+                model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
+                model.ModifiedDate = DateTime.Now;
+
+                if(model.ImagePath != null)
+                {
+
+                }
+                else
+                {
+                    model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Employee/", ImagePath);
+                }
+           
+                model.TotalPay = ((model.Hours + model.EkstraHours) * model.HourlyPay) * model.Days;
+
+                emps.Update(model);
+                return RedirectToAction("Index","Home");
+            }
+            return View();
         }
     }
 }

@@ -10,6 +10,11 @@ namespace MVC_BilgeHotel.MODEL.Entities
 {
     public class Customer : PersonEntity
     {
+        public Customer()
+        {
+            CustomerBookings = new List<CustomerBooking>();
+
+        }
         public virtual List<CustomerBooking> CustomerBookings { get; set; }
 
         public Guid CustomerBookingID { get; set; }

@@ -11,14 +11,9 @@ namespace MVC_BilgeHotel.SERVICE.Options
 {
     public class EmployeeService : BaseService<Employee>
     {
-        public bool CheckEmpoyeeUsers(string _email, string _password)
+        public bool CheckEmpoyeeUsers(string _email, string _password, Roles _roles)
         {
-            return Any(x => x.EmailAddress == _email && x.Password == _password);
-        }
-
-        public bool CheckEmpoyeeRole(Roles _role)
-        {
-            return Any(x => x.Role == _role);
+            return Any(x => x.EmailAddress == _email && x.Password == _password && x.Role == _roles);
         }
 
         public bool CheckEmpoyeeTCNO(string _tcno)

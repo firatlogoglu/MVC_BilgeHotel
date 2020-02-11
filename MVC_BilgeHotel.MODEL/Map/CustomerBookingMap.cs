@@ -12,7 +12,8 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public CustomerBookingMap()
         {
-
+            Property(x => x.BookingID).HasColumnName("BID");
+            Property(x => x.CustomerID).HasColumnName("CID");
         }
     }
 }

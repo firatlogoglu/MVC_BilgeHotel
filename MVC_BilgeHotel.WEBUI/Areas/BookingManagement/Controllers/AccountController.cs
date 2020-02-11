@@ -34,7 +34,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
             {
                 if(model.Password != null && model.EmailAddress != string.Empty)
                 {
-                    if(db.CheckEmpoyeeUsers(model.EmailAddress, model.Password))
+                    if(db.CheckEmpoyeeUsers(model.EmailAddress, model.Password, MODEL.Enums.Roles.Receptionist))
                     {
                         var employeeUser = db.GetByDefault(x => x.EmailAddress == model.EmailAddress);
                         Session["BMLogin"] = employeeUser;

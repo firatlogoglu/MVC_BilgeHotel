@@ -15,7 +15,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
     public class RoomController : Controller
     {
         RoomService rmdb = new RoomService();
-        BookingRoomService BookingRoomService = new BookingRoomService();
+
 
         // GET: HotelManegement/Room
         public ActionResult Index()
@@ -50,6 +50,8 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             if (ModelState.IsValid)
             {
                 model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Rooms/", ImagePath);
+
+
                 model.ModifiedComputerName = Environment.MachineName;
                 model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
                 model.ModifiedDate = DateTime.Now;

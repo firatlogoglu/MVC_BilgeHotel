@@ -12,6 +12,8 @@ namespace MVC_BilgeHotel.CORE.Map
     {
         public CoreMap()
         {
+            Property(x => x.ID).HasColumnName("ID");
+
             Property(x => x.GeneralStatus).HasColumnName("GStatus");
 
             Property(x => x.CreatedDate).HasColumnName("CrtdDate");           

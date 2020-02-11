@@ -11,6 +11,11 @@ namespace MVC_BilgeHotel.MODEL.Entities
 {
     public class Room : CoreEntity
     {
+        public Room()
+        {
+            this.Bookings = new HashSet<Booking>();
+        }
+
         [Display(Name = "Oda No")]
         [Required(ErrorMessage = "Oda Numarasının Girilmesi Zorunludur!")]
         public string RoomNumber { get; set; }
@@ -30,7 +35,6 @@ namespace MVC_BilgeHotel.MODEL.Entities
 
         [Display(Name = "Tür")]
         public RoomTypes RoomTypes { get; set; }
-
-        public virtual List<BookingRoom> BookingRooms { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

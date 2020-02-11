@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_BilgeHotel.WEBUI", "MVC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_BilgeHotel.COMMON", "MVC_BilgeHotel.COMMON\MVC_BilgeHotel.COMMON.csproj", "{61A3D04A-0BCA-4473-ACE9-941FF71B9902}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_BilgeHotel.API", "MVC_BilgeHotel.API\MVC_BilgeHotel.API.csproj", "{39875783-F18D-4586-9343-618A05A74970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{61A3D04A-0BCA-4473-ACE9-941FF71B9902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A3D04A-0BCA-4473-ACE9-941FF71B9902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A3D04A-0BCA-4473-ACE9-941FF71B9902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39875783-F18D-4586-9343-618A05A74970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39875783-F18D-4586-9343-618A05A74970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39875783-F18D-4586-9343-618A05A74970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39875783-F18D-4586-9343-618A05A74970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

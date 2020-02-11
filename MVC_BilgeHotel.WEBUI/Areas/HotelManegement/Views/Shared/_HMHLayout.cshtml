@@ -9,12 +9,18 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Partial("PartialViews/_TopNavbar")
 
-    @Html.Partial("~/Areas/HotelManegement/Views/Shared/PartialViews/_LeftSideMenu.cshtml")
-    
+    <div>
+        @Html.Partial("PartialViews/_TopNavbar")
+    </div>
 
-    <div class="container body-content">
+
+    <div class="col-md-2">
+        @Html.Partial("~/Areas/HotelManegement/Views/Shared/PartialViews/_LeftSideMenu.cshtml")
+    </div>
+
+
+    <div class="container body-content col-md-10">
 
         @RenderBody()
         <hr />
@@ -23,7 +29,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-<script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

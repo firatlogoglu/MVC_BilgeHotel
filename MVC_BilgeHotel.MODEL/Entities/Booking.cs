@@ -13,17 +13,16 @@ namespace MVC_BilgeHotel.MODEL.Entities
     {
         public Booking ()
         {
-            BookingRooms = new List<BookingRoom>();
             CustomerBookings = new List<CustomerBooking>();
         }
 
         [Display(Name = "Giriş Tarihi")]
-        public  DateTime InDate  { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
+        public  DateTime InDate  { get; set; }
 
         [Display(Name = "Çıkış Tarihi")]
-        public DateTime OutDate { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime OutDate { get; set; }
 
         [Display(Name = "Kişi Sayası")]
         public int CostomerCount { get; set; }
@@ -52,8 +51,8 @@ namespace MVC_BilgeHotel.MODEL.Entities
         public Guid CustomerBookingID { get; set; }
         public virtual List<CustomerBooking> CustomerBookings { get; set; }
 
-        public Guid BookingRoomID { get; set; }
-        public virtual List<BookingRoom> BookingRooms { get; set; }
+        public Guid RoomID { get; set; }
+        public virtual Room Rooms { get; set; }
 
     }
 }

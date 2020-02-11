@@ -12,6 +12,11 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public RoomMap()
         {
+            Property(x => x.ImagePath).HasColumnName("ImgPath");
+            Property(x => x.RoomNumber).HasColumnName("RNo");
+            Property(x => x.RoomStatus).HasColumnName("RStatus");
+            Property(x => x.RoomTypes).HasColumnName("RTypes");
+            Property(x => x.Capacity).HasColumnName("Capacity");
         }
     }
 }

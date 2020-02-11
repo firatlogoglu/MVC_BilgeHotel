@@ -9,12 +9,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Partial("PartialViews/_TopNavbar")
 
-    @Html.Partial("~/Areas/BookingManagement/Views/Shared/PartialViews/_LeftSideMenu.cshtml")
+    <div>
+        @Html.Partial("PartialViews/_TopNavbar")
+    </div>
 
+    <div class="col-md-2">
+        @Html.Partial("~/Areas/BookingManagement/Views/Shared/PartialViews/_LeftSideMenu.cshtml")
+    </div>
 
-    <div class="container body-content">
+    <div class="container body-content col-md-10">
 
         @RenderBody()
         <hr />

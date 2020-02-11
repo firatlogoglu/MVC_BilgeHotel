@@ -255,7 +255,6 @@
     <Content Include="Areas\HotelManegement\Views\Employee\Create.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Room\Index.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Room\Create.cshtml" />
-    <Content Include="Areas\HotelManegement\Views\Booking\Index.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Employee\Edit.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Room\Edit.cshtml" />
     <Content Include="bin\MVC_BilgeHotel.COMMON.dll.config" />
@@ -275,6 +274,7 @@
     <Content Include="Areas\BookingManagement\Views\Booking\Index.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Booking\Create.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Booking\Edit.cshtml" />
+    <Content Include="Areas\HotelManegement\Views\Account\AccountDetail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -320,6 +320,7 @@
     <Folder Include="Areas\BookingC\Data\" />
     <Folder Include="Areas\BookingManagement\Data\" />
     <Folder Include="Areas\HotelManegement\Data\" />
+    <Folder Include="Areas\HotelManegement\Views\Booking\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

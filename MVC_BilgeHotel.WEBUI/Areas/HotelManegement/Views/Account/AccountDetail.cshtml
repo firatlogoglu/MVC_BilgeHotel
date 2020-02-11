@@ -1,22 +1,77 @@
 ﻿@model Employee
-
 @{
-    ViewBag.Title = "Personel Ekle";
+    ViewBag.Title = "Maaş Durumu ve Kişisel Bilgiler";
     Layout = "~/Areas/HotelManegement/Views/Shared/_HMHLayout.cshtml";
 }
-<h2>@ViewBag.Title</h2>
-  
-@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { enctype = "multipart/form-data"}))
+
+<h4>Maaş Durumu</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Shift)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HourlyPay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Days)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EkstraHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalPay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Paid)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Role</td>
+                <td>@Model.Shift</td>
+                <td>@Model.HourlyPay</td>
+                <td>@Model.Hours</td>
+                <td>@Model.Days</td>
+                <td>@Model.EkstraHours</td>
+                <td>@Model.TotalPay</td>
+                <td>@Model.Paid</td>
+            </tr>
+        </tbody>
+    </table>
+
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
 <div class="form">
+    <h4>Kişisel Bilgileriniz</h4>
+    <br />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.Role)
+    @Html.HiddenFor(model => model.TotalPay)
+    @Html.HiddenFor(model => model.Paid)
+    @Html.HiddenFor(model => model.Shift)
+    @Html.HiddenFor(model => model.Days)
+    @Html.HiddenFor(model => model.Hours)
+    @Html.HiddenFor(model => model.EkstraHours)
+    @Html.HiddenFor(model => model.HourlyPay)
     <div class="form-group">
-        @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.Role, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(x => x.ImagePath, new { type = "file", @class = "form-control", style = "font-size:10px", @name = "ImagePath" })
+            <img src="@Model.ImagePath" style="width:30px; height:30px" />
+            @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -40,6 +95,14 @@
         @Html.LabelFor(model => model.SurName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.SurName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SurName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.SurName, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -79,7 +142,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
             @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -93,73 +156,15 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.HourlyPay, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.HourlyPay, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.HourlyPay, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Hours, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Hours, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.HourlyPay, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.EkstraHours, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.EkstraHours, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.HourlyPay, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Days, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Days, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Days, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TotalPay, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TotalPay, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TotalPay, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Shift, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.Shift, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Shift, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(x => x.ImagePath, new { type = "file", @class = "form-control", style = "font-size:12px", @name = "ImagePath" })
-            @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Paid, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Paid, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Paid, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Ekle" class="btn btn-default" />
+            <input type="submit" value="Kaydet" class="btn btn-default" />
         </div>
     </div>
 </div>
 }
+
+<div>
+    @Html.ActionLink("Anasafya","Index","Home")
+</div>
+
+<script src="~/Scripts/MyScripts.js"></script>

@@ -51,7 +51,6 @@
     <Compile Include="Context\ProjectContext.cs" />
     <Compile Include="Context\SampleData.cs" />
     <Compile Include="Entities\Booking.cs" />
-    <Compile Include="Entities\BookingRoom.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\CustomerBooking.cs" />
     <Compile Include="Entities\Employee.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="Enums\RoomTypes.cs" />
     <Compile Include="Enums\Shifts.cs" />
     <Compile Include="Map\BookingMap.cs" />
-    <Compile Include="Map\BookingRoomMap.cs" />
     <Compile Include="Map\CustomerBookingMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\EmployeeMap.cs" />
@@ -79,18 +77,31 @@
     <Content Include="bin\Debug\MVC_BilgeHotel.CORE.pdb" />
     <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.dll" />
     <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.pdb" />
+    <Content Include="bin\Release\EntityFramework.dll" />
+    <Content Include="bin\Release\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Release\MVC_BilgeHotel.CORE.dll" />
+    <Content Include="bin\Release\MVC_BilgeHotel.CORE.pdb" />
+    <Content Include="bin\Release\MVC_BilgeHotel.MODEL.dll" />
+    <Content Include="bin\Release\MVC_BilgeHotel.MODEL.pdb" />
     <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.dll" />
     <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.pdb" />
+    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.dll" />
+    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.pdb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="bin\Debug\MVC_BilgeHotel.CORE.dll.config" />
     <None Include="bin\Debug\MVC_BilgeHotel.MODEL.dll.config" />
+    <None Include="bin\Release\MVC_BilgeHotel.CORE.dll.config" />
+    <None Include="bin\Release\MVC_BilgeHotel.MODEL.dll.config" />
     <None Include="obj\Debug\build.force" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.CopyComplete" />
     <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\MVC_BilgeHotel.MODEL.csproj.CopyComplete" />
+    <None Include="obj\Release\MVC_BilgeHotel.MODEL.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,8 +111,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

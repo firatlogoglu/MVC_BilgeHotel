@@ -12,7 +12,19 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public BookingMap()
         {
+            Property(x => x.InDate).HasColumnName("InDate");
+            Property(x => x.OutDate).HasColumnName("OutDate");
+            Property(x => x.Package).HasColumnName("Pckg");
+            Property(x => x.Description).HasColumnName("Description");
 
+            Property(x => x.CostomerCount).HasColumnName("CstmerCount");
+            Property(x => x.Paid).HasColumnName("Paid");
+            Property(x => x.TotalDays).HasColumnName("TDays");
+            Property(x => x.TotalPrice).HasColumnName("TPrice");
+            Property(x => x.UnitPrice).HasColumnName("UntPrice");
+            Property(x => x.ExtraPrice).HasColumnName("ExPrice");
+
+            Property(x => x.CustomerBookingID).HasColumnName("CBID");   
         }
     }
 }

@@ -45,7 +45,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit (Guid id)
+        public ActionResult Edit (Guid id, HttpPostedFileBase ImagePath)
         {
             return View(emps.GetByID(id));
         }
@@ -56,10 +56,10 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         {
             if (ModelState.IsValid)
             {
+                //TODO: Düzenleme sırasında resim değişmediğinde resimi boş olarak değiştiriyor.
                 model.ModifiedComputerName = Environment.MachineName;
                 model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
                 model.ModifiedDate = DateTime.Now;
-
                 model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Employee/", ImagePath);
                 model.TotalPay = ((model.Hours + model.EkstraHours) * model.HourlyPay) * model.Days;
 

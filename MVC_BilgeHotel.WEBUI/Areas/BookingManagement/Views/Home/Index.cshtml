@@ -5,41 +5,43 @@
 }
 
 <h2>Boş Odalar</h2>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Capacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomStatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomTypes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GeneralStatus)
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="row">
+    <table class="table">
         <tr>
-            <td>
-                <img src="@item.ImagePath" style="width:30px; height:30px" />
-            </td>
-            <td>@item.RoomNumber</td>
-            <td>@item.Capacity</td>
-            <td>@item.RoomStatus</td>
-            <td>@item.RoomTypes</td>
-            <td>@item.GeneralStatus</td>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralStatus)
+            </th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ImagePath" style="width:30px; height:30px" />
+                </td>
+                <td>@item.RoomNumber</td>
+                <td>@item.Capacity</td>
+                <td>@item.RoomStatus</td>
+                <td>@item.RoomTypes</td>
+                <td>@item.GeneralStatus</td>
+            </tr>
+        }
+
+    </table>
+</div>
+

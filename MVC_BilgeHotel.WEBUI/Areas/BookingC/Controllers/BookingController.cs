@@ -1,4 +1,5 @@
-﻿using MVC_BilgeHotel.MODEL.Entities;
+﻿using MVC_BilgeHotel.MODEL.Context;
+using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
@@ -14,6 +15,11 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
     public class BookingController : Controller
     {
         BookingService sdb = new BookingService();
+        RoomService rdb = new RoomService();
+        
+        Booking b = new Booking();
+        CustomerBooking cb = new CustomerBooking();
+       
         public ActionResult Index()
         {
             return View(sdb.GetAll());
@@ -21,43 +27,75 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
 
         public ActionResult Create()
         {
+
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(Booking model)
         {
+            var customerUserDetail = Session["CLogin"] as Customer;
+            b.ID = Guid.NewGuid();
+
+            cb.ID = Guid.NewGuid();
+            cb.CustomerID = customerUserDetail.ID;
+            cb.BookingID = b.ID;
+            model.CustomerBookingID = cb.ID;
 
             //Kişi sayısı hesapa katılmamıştır.
-            model.ID = Guid.NewGuid();
+            model.ID = b.ID;
+
+            DateTime dnow30 = DateTime.Now;
+            dnow30 = dnow30.AddDays(30);
+
+            DateTime dnow90 = DateTime.Now;
+            dnow90 = dnow90.AddDays(90);
+
             TimeSpan Sonuc = model.OutDate - model.InDate;
             model.TotalDays = Sonuc.Days;
             model.UnitPrice = 100;
-            if(model.Package == MODEL.Enums.BookingPackages.FullBoard && model.InDate > DateTime.Now.AddDays(30))
+            if (model.InDate <= DateTime.Now)
             {
-                model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays) * 0.16m;
+                return RedirectToAction("Index");
             }
-            else if(model.Package == MODEL.Enums.BookingPackages.AllInclusive && model.InDate > DateTime.Now.AddDays(30))
+            if (model.InDate < dnow30)
             {
-                model.TotalPrice = (model.UnitPrice * model.TotalDays) * 0.18m;
+                if (model.Package == MODEL.Enums.BookingPackages.AllInclusive)
+                {
+                    model.TotalPrice = (model.UnitPrice * model.TotalDays);
+                }
+                else
+                {
+                    model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays);
+                }
             }
-            else if (model.Package == MODEL.Enums.BookingPackages.AllInclusive && model.InDate > DateTime.Now.AddDays(120))
+            else if (model.InDate > dnow30 && model.InDate < dnow90)
             {
-                model.TotalPrice = (model.UnitPrice * model.TotalDays) * 0.23m;
-            }
-            else if (model.Package == MODEL.Enums.BookingPackages.FullBoard && model.InDate > DateTime.Now.AddDays(120))
-            {
-                model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays) * 0.23m;
-            }
-            else if (model.Package == MODEL.Enums.BookingPackages.FullBoard)
-            {
-                model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays);
+
+                if (model.Package == MODEL.Enums.BookingPackages.AllInclusive)
+                {
+                    model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays) * 0.16m;
+                }
+                else
+                {
+                    model.TotalPrice = (model.UnitPrice * model.TotalDays) * 0.18m;
+                }
             }
 
-            else if (model.Package == MODEL.Enums.BookingPackages.AllInclusive)
+            else if (model.InDate > dnow90)
             {
-                model.TotalPrice = (model.UnitPrice * model.TotalDays);
+                if (model.Package == MODEL.Enums.BookingPackages.AllInclusive)
+                {
+                    model.TotalPrice = (model.UnitPrice * model.TotalDays) * 0.23m;
+                }
+                else
+                {
+                    model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays) * 0.23m;
+                }
             }
+
+            model.CustomerBookings.Add(cb);
             sdb.Add(model);
             return RedirectToAction("Index");
 

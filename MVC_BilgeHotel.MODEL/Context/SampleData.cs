@@ -22,7 +22,16 @@ namespace MVC_BilgeHotel.MODEL.Context
 
             Guid c1 = Guid.NewGuid();
             Guid cb1 = Guid.NewGuid();
+
             Guid boook1 = Guid.NewGuid();
+            Guid boook2 = Guid.NewGuid();
+            Guid boook3 = Guid.NewGuid();
+            Guid boook4 = Guid.NewGuid();
+            Guid boook5 = Guid.NewGuid();
+            Guid boook6 = Guid.NewGuid();
+
+            Guid br1 = Guid.NewGuid();
+            Guid br2 = Guid.NewGuid();
 
             #region Odalar
 
@@ -485,19 +494,72 @@ namespace MVC_BilgeHotel.MODEL.Context
                 CustomerBookingID =cb1,
                 GeneralStatus = CORE.Enums.GeneralStatus.Active,
                 Package = Enums.BookingPackages.AllInclusive,
-                InDate = new DateTime(2020, 1, 27),
-                OutDate = new DateTime(2020, 1, 30),
-                BookingRooms = new List<BookingRoom>()
-                {
-
-                    new BookingRoom {ID = Guid.NewGuid(),
-                        RoomID=room100,
-                        GeneralStatus= CORE.Enums.GeneralStatus.Active
-
-                        }
-                }
+                InDate = new DateTime(2020, 2, 1),
+                OutDate = new DateTime(2020, 5, 25),
+                RoomID = room100,
 
             });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook2,
+                CustomerBookingID = cb1,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 3, 1),
+                OutDate = new DateTime(2020, 3, 25),
+                RoomID = room101,
+
+            });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook3,
+                CustomerBookingID = cb1,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 4, 1),
+                OutDate = new DateTime(2020, 5, 15),
+                RoomID = room102,
+
+            });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook4,
+                CustomerBookingID = cb1,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 4, 1),
+                OutDate = new DateTime(2020, 4, 15),
+                RoomID = room103,
+
+            });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook5,
+                CustomerBookingID = cb1,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 2, 1),
+                OutDate = new DateTime(2020, 4, 1),
+                RoomID = room105,
+
+            });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook6,
+                CustomerBookingID = cb1,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 5, 1),
+                OutDate = new DateTime(2020, 6, 1),
+                RoomID = room105,
+
+            });
+
             context.Bookings.AddRange(bookings);
             #endregion
 
@@ -508,8 +570,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             {
                 ID = cb1,
                 BookingID = boook1,
-                CustomerID = c1,
-            
+                CustomerID = c1,           
             });
 
             context.CustomerBookings.AddRange(customerBookings);

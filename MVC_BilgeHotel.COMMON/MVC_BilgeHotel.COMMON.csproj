@@ -60,6 +60,7 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.CopyComplete" />
     <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\MVC_BilgeHotel.COMMON.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +77,7 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
