@@ -32,7 +32,7 @@
 #### 2.4 - Context
 * ProjectContext: Context nesnemizdir.
 <h4> NOT:ProjectContext isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
-<h4> NOT:ProjectContext SQL Server bağlatı ayarlarınızı verin (TODOLARI OKUYIN!!!)</h4>
+<h4> NOT:ProjectContext SQL Server bağlatı ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
 
 * SampleData: Örnek verilerimizin bulunduğu classtır.
 #### 2.5 - Migrations
@@ -67,7 +67,7 @@
 
 * MailSender/E-Posta Göndericisi
 <h4> NOT:MailSender isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
-<h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYIN!!!)</h4>
+<h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
 
 ### 6 - MVC_BilgeHotel.API
 
