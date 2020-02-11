@@ -15,7 +15,6 @@
 ### 2 - MVC_BilgeHotel.MODEL
 #### 2.1 - Entities
 * Booking
-* BookingRoom
 * CustomerBooking
 * Customer
 * Employee
@@ -29,7 +28,6 @@
 * CustomerMap:
 * EmployeeMap:
 * BookingMap:
-* BookingRoomMap:
 * CustomerBookingMap
 #### 2.4 - Context
 * ProjectContext: Context nesnemizdir.
@@ -48,7 +46,6 @@
 * CustomerService:
 * CustomerBookingService
 * BookingService:
-* BookingRoomService:
 ### 4 - MVC_BilgeHotel.WEBUI (Sunum Katmanı)
 #### 4.1 - Giriş Sayfası - Controllers/Home
 * Areasız(bölgesiz) olarak tanımlanmıştır. Home Controllerin içerisinde Index, About, Contact ve ManagerIndex isimli ActionResultlar bulunuyor. ManagerIndex Hotel personline ait olan Arealarda bulunun Login sayfalarına yönlerimesini yapar.
@@ -71,4 +68,6 @@
 * MailSender/E-Posta Göndericisi
 <h4> NOT:MailSender isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
 <h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYIN!!!)</h4>
+
+### 6 - MVC_BilgeHotel.API
 
