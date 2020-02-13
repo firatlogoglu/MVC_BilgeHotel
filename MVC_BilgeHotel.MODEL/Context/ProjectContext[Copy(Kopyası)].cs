@@ -13,7 +13,6 @@ namespace MVC_BilgeHotel.MODEL.Context
     {
         public ProjectContext()
         {
-            //TODO: TEST
             //TODO: SQL Connection bağlatsını vermeyi unutmayın! Kendi SQL Server name'nizi SERVERNAME kısma yazın, database ismini varsayılan olarak MVCBilgeHotelDB tanımlanmıştır. SQL'nizdeki sizin USERNAME ve PASSWORD giriniz.
             //TODO: Class isminin sonundaki "[Copy(Kopyası)]" yazıyı silin ve projeye dahil edin.
             Database.Connection.ConnectionString = "server=SERVERNAME;database=MVCBilgeHotelDB;uid=USERNAME;pwd=PASSWORD";

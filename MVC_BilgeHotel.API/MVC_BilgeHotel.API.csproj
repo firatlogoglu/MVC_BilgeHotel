@@ -92,7 +92,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\MVC_BilgeHotel.API.dll" />
+    <Content Include="bin\MVC_BilgeHotel.API.pdb" />
+    <Content Include="bin\MVC_BilgeHotel.CORE.dll" />
+    <Content Include="bin\MVC_BilgeHotel.CORE.pdb" />
+    <Content Include="bin\MVC_BilgeHotel.MODEL.dll" />
+    <Content Include="bin\MVC_BilgeHotel.MODEL.pdb" />
+    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll" />
+    <Content Include="bin\MVC_BilgeHotel.SERVICE.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Cors.dll" />
+    <Content Include="bin\System.Web.Http.Cors.dll" />
+    <Content Include="bin\System.Web.Http.Cors.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\tr\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\tr\System.Web.Http.resources.dll" />
+    <Content Include="bin\tr\System.Web.Http.WebHost.resources.dll" />
     <Content Include="Global.asax" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.API.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.API.dll" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.API.pdb" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +136,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\MVC_BilgeHotel.API.dll.config" />
+    <Content Include="bin\MVC_BilgeHotel.CORE.dll.config" />
+    <Content Include="bin\MVC_BilgeHotel.MODEL.dll.config" />
+    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll.config" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.API.csproj.CopyComplete" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.API.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -115,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MVC_BilgeHotel.CORE\MVC_BilgeHotel.CORE.csproj">
