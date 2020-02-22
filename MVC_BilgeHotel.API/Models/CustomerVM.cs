@@ -8,6 +8,7 @@ namespace MVC_BilgeHotel.API.Models
 {
     public class CustomerVM
     {
+        public ushort ID { get; set; }
 
         public string TCNO { get; set; }
 

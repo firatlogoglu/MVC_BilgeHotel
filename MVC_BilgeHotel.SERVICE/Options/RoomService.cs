@@ -31,16 +31,21 @@ namespace MVC_BilgeHotel.SERVICE.Options
 
         }
 
-        //public List<Room> GetRoomEmtpyToDay(Room room)
-        //{
-        //    var ee = from r in db.Rooms
-        //             select new
-        //             {
-        //                 Roomsi =
-        //                 Bo = r.BookingRooms.
-        //    }
-        //    return
+        public List<Room> GetRoomFull()
+        {
+            return db.Set<Room>().Where(x => x.RoomStatus == MVC_BilgeHotel.MODEL.Enums.RoomStatus.Full).ToList();
+            
+        }
 
+        //public List<Room> GetRoomEmtpyToDay()
+        //{
+        //    var ee = db.Employees.Join(
+        //        db.CustomerBookings,
+        //        em => em.ID,
+        //        cb => cb.BookingID,
+        //        (em, cb) => new { });
+
+        //    return ee;
         //}
     }
 }

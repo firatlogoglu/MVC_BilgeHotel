@@ -17,10 +17,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         // GET: HotelManegement/Booking
         public ActionResult Index()
         {
-
             return View();
-
-
         }
     }
 }

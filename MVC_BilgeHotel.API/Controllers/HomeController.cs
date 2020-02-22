@@ -1,6 +1,4 @@
 ﻿using MVC_BilgeHotel.API.Models;
-using MVC_BilgeHotel.MODEL.Context;
-using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
 using System;
 using System.Collections.Generic;
@@ -13,27 +11,29 @@ namespace MVC_BilgeHotel.API.Controllers
 {
     public class HomeController : ApiController
     {
-        ProjectContext dp = new ProjectContext();
-        RoomService rs = new RoomService();
         CustomerService s = new CustomerService();
-        public IHttpActionResult GetOgrenciler()
+        public IHttpActionResult GetFullRoomsCustomers()
         {
             //TODO:DOLU ODALAR YAPILACAK
-            var customer = s.GetAll().Select(x => new CustomerVM
+
+            List<CustomerVM> customerVMs = new List<CustomerVM>();
+            var customer = s.FullRoomsCustomers();
+            ushort s2 = 0;
+            foreach (var item in customer)
             {
-                TCNO = x.TCNO,
-                FirstName = x.FirstName,
-                SurName = x.SurName,
-                Address = x.Address,
-                BirthDate = x.BirthDate,
-                BirthPlace = x.BirthPlace,
-                Gender = x.Gender,
-                PhoneNumber = x.PhoneNumber,
-
-
-            }).ToList();
-
-            return Ok (customer);
+                CustomerVM c = new CustomerVM();
+                c.ID = ++ s2;
+                c.TCNO = item.TCNO;
+                c.FirstName = item.FirstName;
+                c.SurName = item.SurName;
+                c.BirthDate = item.BirthDate;
+                c.BirthPlace = item.BirthPlace;
+                c.Gender = item.Gender;
+                c.PhoneNumber = item.PhoneNumber;
+                c.Address = item.Address;
+                customerVMs.Add(c);
+            }
+            return Ok(customerVMs);
         }
     }
 }

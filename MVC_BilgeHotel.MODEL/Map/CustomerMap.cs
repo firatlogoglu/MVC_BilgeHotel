@@ -27,8 +27,6 @@ namespace MVC_BilgeHotel.MODEL.Map
             Property(x => x.BirthDate).HasColumnName("BDate");
             
             Property(x => x.User).HasColumnName("Usr");
-
-            Property(x => x.CustomerBookingID).HasColumnName("CBID");
         }
     }
 }

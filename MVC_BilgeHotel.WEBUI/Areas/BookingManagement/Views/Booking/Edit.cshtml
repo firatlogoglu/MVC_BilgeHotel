@@ -98,18 +98,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CustomerBookingID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CustomerBookings, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerBookingID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CustomerBookingID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.CustomerBookings, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerBookings, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BookingRoomID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.RoomID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.BookingRoomID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BookingRoomID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RoomID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RoomID, "", new { @class = "text-danger" })
             </div>
         </div>
 

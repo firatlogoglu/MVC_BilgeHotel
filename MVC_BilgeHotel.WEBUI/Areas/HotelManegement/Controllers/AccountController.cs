@@ -36,9 +36,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
                 if (model.Password != null && model.EmailAddress != string.Empty)
                 {
                     if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password, MODEL.Enums.Roles.Manager))
-                    //if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password) && model.Role == MODEL.Enums.Roles.Manager)
                     {
-                        //TODO: Yekilendirilme yapılamadı model
                         var employeeUser = db.GetByDefault(x => x.EmailAddress == model.EmailAddress);
                         Session["HMLogin"] = employeeUser;
 

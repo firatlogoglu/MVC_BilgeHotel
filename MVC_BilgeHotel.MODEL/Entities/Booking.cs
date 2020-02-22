@@ -11,7 +11,7 @@ namespace MVC_BilgeHotel.MODEL.Entities
 {
     public class Booking:CoreEntity
     {
-        public Booking ()
+        public Booking()
         {
             CustomerBookings = new List<CustomerBooking>();
         }
@@ -48,11 +48,11 @@ namespace MVC_BilgeHotel.MODEL.Entities
         [Display(Name = "Ödendi")]
         public bool Paid { get; set; }
 
-        public Guid CustomerBookingID { get; set; }
-        public virtual List<CustomerBooking> CustomerBookings { get; set; }
-
+        //public Guid CustomerBookingID { get; set; }
         public Guid RoomID { get; set; }
-        public virtual Room Rooms { get; set; }
+
+        public virtual List<CustomerBooking> CustomerBookings { get; set; }
+        public virtual Room Room { get; set; }
 
     }
 }

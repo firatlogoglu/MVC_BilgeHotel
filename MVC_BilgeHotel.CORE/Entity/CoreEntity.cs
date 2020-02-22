@@ -25,7 +25,7 @@ namespace MVC_BilgeHotel.CORE.Entity
             this.CreatedUserID = 1;
         }
 
-
+        [Key]
         public Guid ID { get; set; }
 
         [Display(Name = "Genel Durum")]

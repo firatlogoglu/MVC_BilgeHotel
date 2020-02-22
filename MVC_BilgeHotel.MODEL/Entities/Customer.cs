@@ -12,15 +12,13 @@ namespace MVC_BilgeHotel.MODEL.Entities
     {
         public Customer()
         {
-            CustomerBookings = new List<CustomerBooking>();
-
+            this.CustomerBookings = new List<CustomerBooking>();
         }
-        public virtual List<CustomerBooking> CustomerBookings { get; set; }
-
-        public Guid CustomerBookingID { get; set; }
 
         [Display(Name = "Üye")]
         public bool User { get; set; }
-
+        ////public /*virtual */CustomerBooking CustomerBooking { get; set; }
+        //public virtual CustomerBooking CustomerBooking { get; set; }
+        public virtual List<CustomerBooking> CustomerBookings { get; set; }
     }
 }

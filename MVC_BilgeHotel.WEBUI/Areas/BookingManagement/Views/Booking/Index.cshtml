@@ -37,10 +37,10 @@
             @Html.DisplayNameFor(model => model.Paid)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerBookingID)
+            @Html.DisplayNameFor(model => model.CustomerBookings)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BookingRoomID)
+            @Html.DisplayNameFor(model => model.Room.RoomNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GeneralStatus)
@@ -80,10 +80,10 @@
                 @Html.DisplayFor(modelItem => item.Paid)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CustomerBookingID)
+                @Html.DisplayFor(modelItem => item.CustomerBookings)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BookingRoomID)
+                @Html.DisplayFor(modelItem => item.Room.RoomNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GeneralStatus)

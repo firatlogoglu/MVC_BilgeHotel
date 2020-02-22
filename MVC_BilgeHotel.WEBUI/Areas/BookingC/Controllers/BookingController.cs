@@ -27,8 +27,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
 
         public ActionResult Create()
         {
-
-
             return View();
         }
 
@@ -40,9 +38,9 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
 
             cb.ID = Guid.NewGuid();
             cb.CustomerID = customerUserDetail.ID;
-            cb.BookingID = b.ID;
-            model.CustomerBookingID = cb.ID;
-
+            cb.ID = b.ID;
+            model.ID = cb.ID;
+            //TODO:    model.ID = cb.ID; KTROL
             //Kişi sayısı hesapa katılmamıştır.
             model.ID = b.ID;
 
@@ -95,7 +93,8 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                 }
             }
 
-            model.CustomerBookings.Add(cb);
+            //model.CustomerBookingID.Add(cb);
+            //TODO: CustomerBookinhg test edilecek
             sdb.Add(model);
             return RedirectToAction("Index");
 

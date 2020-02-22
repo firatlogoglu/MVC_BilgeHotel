@@ -103,7 +103,7 @@ namespace MVC_BilgeHotel.SERVICE.Base
 
         public void TCUpdate(Customer custumer)
         {
-            
+
             Customer customer = new Customer();
 
             var cus = db.Customers.Where(s => s.TCNO == custumer.TCNO).FirstOrDefault<Customer>();
@@ -114,12 +114,7 @@ namespace MVC_BilgeHotel.SERVICE.Base
             Save();
 
         }
-        public void AA()
-        {
-            //var bookings = db.Bookings.Include(b => b.Customer).ToString();
-
+            
         }
-           
-
     }
-}
+

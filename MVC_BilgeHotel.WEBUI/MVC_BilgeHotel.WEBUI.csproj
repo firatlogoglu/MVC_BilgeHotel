@@ -150,6 +150,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\MVC_BilgeHotel.WEBUI.dll" />
+    <Content Include="bin\MVC_BilgeHotel.WEBUI.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -247,6 +249,8 @@
     <Folder Include="Areas\BookingManagement\Data\" />
     <Folder Include="Areas\HotelManegement\Data\" />
     <Folder Include="Areas\HotelManegement\Views\Booking\" />
+    <Folder Include="bin\roslyn\" />
+    <Folder Include="bin\tr\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
