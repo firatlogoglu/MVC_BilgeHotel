@@ -14,8 +14,6 @@ namespace MVC_BilgeHotel.API.Controllers
         CustomerService s = new CustomerService();
         public IHttpActionResult GetFullRoomsCustomers()
         {
-            //TODO:DOLU ODALAR YAPILACAK
-
             List<CustomerVM> customerVMs = new List<CustomerVM>();
             var customer = s.FullRoomsCustomers();
             ushort s2 = 0;
