@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVC_BilgeHotel.MODEL.Entities
 {
-    public class Booking:CoreEntity
+    public class Booking : CoreEntity
     {
         public Booking()
         {
@@ -18,7 +18,7 @@ namespace MVC_BilgeHotel.MODEL.Entities
 
         [Display(Name = "Giriş Tarihi")]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
-        public  DateTime InDate  { get; set; }
+        public DateTime InDate { get; set; }
 
         [Display(Name = "Çıkış Tarihi")]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
@@ -48,11 +48,10 @@ namespace MVC_BilgeHotel.MODEL.Entities
         [Display(Name = "Ödendi")]
         public bool Paid { get; set; }
 
-        //public Guid CustomerBookingID { get; set; }
+
         public Guid RoomID { get; set; }
 
         public virtual List<CustomerBooking> CustomerBookings { get; set; }
         public virtual Room Room { get; set; }
-
     }
 }

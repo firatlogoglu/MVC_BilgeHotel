@@ -13,14 +13,12 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
     public class HomeController : Controller
     {
         BookingService sdb = new BookingService();
-        // GET: BookingC/Home
+
         public ActionResult Index()
         {
             return View();
         }
         Customer cs1 = new Customer();
-
-
 
         public ActionResult BookingHistory()
         {

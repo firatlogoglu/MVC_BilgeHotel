@@ -12,10 +12,5 @@ namespace MVC_BilgeHotel.SERVICE.Options
     public class BookingService : BaseService<Booking>
     {
 
-        //public void CheckEmpoyeeUsers()
-        //{
-        //    var booking = db.Bookings.Include(b => b.)
-        //    return ();
-        //}
     }
 }

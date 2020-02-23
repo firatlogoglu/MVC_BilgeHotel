@@ -20,7 +20,7 @@ namespace MVC_BilgeHotel.API.Controllers
             foreach (var item in customer)
             {
                 CustomerVM c = new CustomerVM();
-                c.ID = ++ s2;
+                c.ID = ++s2;
                 c.TCNO = item.TCNO;
                 c.FirstName = item.FirstName;
                 c.SurName = item.SurName;

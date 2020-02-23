@@ -17,8 +17,7 @@ namespace MVC_BilgeHotel.MODEL.Entities
 
         [Display(Name = "Üye")]
         public bool User { get; set; }
-        ////public /*virtual */CustomerBooking CustomerBooking { get; set; }
-        //public virtual CustomerBooking CustomerBooking { get; set; }
+
         public virtual List<CustomerBooking> CustomerBookings { get; set; }
     }
 }

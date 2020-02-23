@@ -13,8 +13,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
     public class BookingController : Controller
     {
         BookingService bsdb = new BookingService();
-        //ProjectContext dc = new ProjectContext();
-        // GET: HotelManegement/Booking
+
         public ActionResult Index()
         {
             return View();

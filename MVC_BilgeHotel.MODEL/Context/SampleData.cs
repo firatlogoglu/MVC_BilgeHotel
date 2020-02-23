@@ -15,11 +15,8 @@ namespace MVC_BilgeHotel.MODEL.Context
         {
             //TODO: Seed Basmak için aşağıda yorum satırı içerinde bulunan kodların, Model katmanı içerisinde bulunan Migrations içerisinede bulunan, Configuration classı içerisine Seed metot içerisine verilmesi gerekmektedir. Migrations sillerseniz tekrardan burdan yapıştırabilirisiniz.
 
-            //
-            //            SampleData data = new SampleData();
-            //      data.InitializeDatabase(context);
-            // update - database - Verbose
-
+            //enable-migrations
+            //update-database -Verbose
 
             Guid c1 = Guid.NewGuid();
             Guid c2 = Guid.NewGuid();
@@ -597,7 +594,7 @@ namespace MVC_BilgeHotel.MODEL.Context
                 CustomerBookings = new List<CustomerBooking>()
                 { zzz,zz2}
                 ,
-            }) ;
+            });
 
             //bookings.Add(new Booking()
             //{

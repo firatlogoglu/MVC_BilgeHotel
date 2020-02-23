@@ -23,9 +23,6 @@ namespace MVC_BilgeHotel.MODEL.Map
             Property(x => x.TotalPrice).HasColumnName("TPrice");
             Property(x => x.UnitPrice).HasColumnName("UntPrice");
             Property(x => x.ExtraPrice).HasColumnName("ExPrice");
-
-            //Property(x => x.CustomerBookingID).HasColumnName("CBID");
-
         }
     }
 }

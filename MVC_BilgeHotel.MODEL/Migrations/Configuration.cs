@@ -14,13 +14,10 @@ namespace MVC_BilgeHotel.MODEL.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-
         protected override void Seed(MVC_BilgeHotel.MODEL.Context.ProjectContext context)
         {
             SampleData data = new SampleData();
             data.InitializeDatabase(context);
-
-           
         }
     }
 }

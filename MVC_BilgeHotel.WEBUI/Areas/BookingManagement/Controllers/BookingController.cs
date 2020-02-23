@@ -27,7 +27,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
         [HttpPost]
         public ActionResult Create(Booking model)
         {
-
             //Kişi sayısı hesapa katılmamıştır.
             model.ID = Guid.NewGuid();
             TimeSpan Sonuc = model.OutDate - model.InDate;
@@ -60,14 +59,11 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
             }
             sdb.Add(model);
             return RedirectToAction("Index");
-
-            //TODO: İlişkili tablolar bağlama işlemi yapılacak
         }
 
         public ActionResult Edit(Guid id)
         {
             return View(sdb.GetByID(id));
-
         }
 
         [HttpPost]

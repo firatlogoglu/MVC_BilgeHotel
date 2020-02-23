@@ -16,10 +16,9 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
     {
         BookingService sdb = new BookingService();
         RoomService rdb = new RoomService();
-        
         Booking b = new Booking();
         CustomerBooking cb = new CustomerBooking();
-       
+
         public ActionResult Index()
         {
             return View(sdb.GetAll());
@@ -97,8 +96,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
             //TODO: CustomerBookinhg test edilecek
             sdb.Add(model);
             return RedirectToAction("Index");
-
-            //TODO: İlişkili tablolar bağlama işlemi yapılacak
         }
     }
 }

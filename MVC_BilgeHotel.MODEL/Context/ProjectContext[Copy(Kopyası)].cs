@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVC_BilgeHotel.MODEL.Context
 {
-    public class ProjectContext:DbContext
+    public class ProjectContext : DbContext
     {
         public ProjectContext()
         {
@@ -18,7 +18,6 @@ namespace MVC_BilgeHotel.MODEL.Context
             Database.Connection.ConnectionString = "server=SERVERNAME;database=MVCBilgeHotelDB;uid=USERNAME;pwd=PASSWORD";
 
             //enable-migrations
-
             //update-database -Verbose
         }
 
@@ -28,7 +27,6 @@ namespace MVC_BilgeHotel.MODEL.Context
             modelBuilder.Configurations.Add(new CustomerMap());
             modelBuilder.Configurations.Add(new EmployeeMap());
             modelBuilder.Configurations.Add(new BookingMap());
-            modelBuilder.Configurations.Add(new BookingRoomMap());
             modelBuilder.Configurations.Add(new CustomerBookingMap());
             base.OnModelCreating(modelBuilder);
         }
@@ -37,7 +35,6 @@ namespace MVC_BilgeHotel.MODEL.Context
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<BookingRoom> BookingRooms { get; set; }
         public DbSet<CustomerBooking> CustomerBookings { get; set; }
     }
 }

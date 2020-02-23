@@ -15,7 +15,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
     public class EmployeeController : Controller
     {
         EmployeeService emps = new EmployeeService();
-        // GET: HotelManegement/Employee
+
         public ActionResult Index()
         {
             TempData["Employee"] = emps.GetAll();
@@ -45,14 +45,13 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit (Guid id, HttpPostedFileBase ImagePath)
+        public ActionResult Edit(Guid id, HttpPostedFileBase ImagePath)
         {
             return View(emps.GetByID(id));
         }
 
-
         [HttpPost]
-        public ActionResult Edit (Employee model, HttpPostedFileBase ImagePath)
+        public ActionResult Edit(Employee model, HttpPostedFileBase ImagePath)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +68,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             return View();
         }
 
-        public ActionResult Delete (Guid Id)
+        public ActionResult Delete(Guid Id)
         {
             emps.Remove(emps.GetByID(Id));
             return RedirectToAction("Index");

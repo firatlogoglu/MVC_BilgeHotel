@@ -22,7 +22,7 @@ namespace MVC_BilgeHotel.MODEL.Entities
 
         [Display(Name = "Kapasite")]
         [Required(ErrorMessage = "Oda Kapasitesinin Girilmesi Zorunludur!")]
-        [Range(1, 8, ErrorMessage ="{0}")]
+        [Range(1, 8, ErrorMessage = "{0}")]
         public int Capacity { get; set; }
 
         [Display(Name = "Oda Durumu")]
@@ -35,6 +35,7 @@ namespace MVC_BilgeHotel.MODEL.Entities
 
         [Display(Name = "Tür")]
         public RoomTypes RoomTypes { get; set; }
+
         public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

@@ -20,6 +20,5 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         {
             return View(db.GetRoomEmtpy(model));
         }
-       
     }
 }

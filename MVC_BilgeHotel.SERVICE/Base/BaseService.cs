@@ -14,7 +14,6 @@ namespace MVC_BilgeHotel.SERVICE.Base
 {
     public class BaseService<T> : ICoreService<T> where T : CoreEntity
     {
-
         private static ProjectContext _database;
         private static ProjectContext db
         {
@@ -48,9 +47,7 @@ namespace MVC_BilgeHotel.SERVICE.Base
         public List<T> GetActive()
         {
             return db.Set<T>().Where(x => x.GeneralStatus == MVC_BilgeHotel.CORE.Enums.GeneralStatus.Active).ToList();
-
         }
-
 
         public List<T> GetAll()
         {
@@ -100,10 +97,8 @@ namespace MVC_BilgeHotel.SERVICE.Base
             Save();
         }
 
-
         public void TCUpdate(Customer custumer)
         {
-
             Customer customer = new Customer();
 
             var cus = db.Customers.Where(s => s.TCNO == custumer.TCNO).FirstOrDefault<Customer>();
@@ -112,9 +107,6 @@ namespace MVC_BilgeHotel.SERVICE.Base
             DbEntityEntry entry = db.Entry(updated);
             entry.CurrentValues.SetValues(cus);
             Save();
-
-        }
-            
         }
     }
-
+}

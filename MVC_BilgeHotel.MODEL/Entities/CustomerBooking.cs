@@ -10,16 +10,8 @@ namespace MVC_BilgeHotel.MODEL.Entities
 {
     public class CustomerBooking : CoreEntity
     {
-        public CustomerBooking()
-        {
-            //this.Customers = new List<Customer>();
-            //this.Bookings = new List<Booking>();
-
-        }
-        
         public Guid BookingID { get; set; }
         public Guid CustomerID { get; set; }
-
 
         public Booking Booking { get; set; }
         public Customer Customer { get; set; }

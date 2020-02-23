@@ -32,7 +32,7 @@ namespace MVC_BilgeHotel.MODEL.Map
 
             Property(x => x.Hours).HasColumnName("Hours");
             Property(x => x.EkstraHours).HasColumnName("ExHrs");
-            Property(x => x.Days).HasColumnName("Days");     
+            Property(x => x.Days).HasColumnName("Days");
         }
     }
 }

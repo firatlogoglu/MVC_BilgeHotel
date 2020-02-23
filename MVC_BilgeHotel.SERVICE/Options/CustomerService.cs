@@ -67,21 +67,22 @@ namespace MVC_BilgeHotel.SERVICE.Options
             List<Customer> customers = new List<Customer>();
 
             var sonuc = db.Rooms.Where(x => x.RoomStatus == MODEL.Enums.RoomStatus.Full).Join(
-        db.Bookings,
-        rm => rm.ID,
-        b => b.RoomID,
-        (rom, bk) => new { rom, bk })
+            db.Bookings,
+            rm => rm.ID,
+            b => b.RoomID,
+            (rom, bk) => new { rom, bk })
 
-                .Join(
-                db.CustomerBookings,
-                bk => bk.bk.ID,
-                c => c.BookingID,
-                (bkk, cbb) => new { bkk.bk, cbb.CustomerID })
+             .Join(
+             db.CustomerBookings,
+             bk => bk.bk.ID,
+             c => c.BookingID,
+             (bkk, cbb) => new { bkk.bk, cbb.CustomerID })
 
-        .Join(db.Customers,
-        cb => cb.CustomerID,
-        c => c.ID,
-        (cb, c) => new { c.TCNO, c.FirstName, c.SurName, c.BirthDate, c.BirthPlace, c.Gender, c.PhoneNumber, c.Address });
+             .Join(db.Customers,
+             cb => cb.CustomerID,
+             c => c.ID,
+             (cb, c) => new { c.TCNO, c.FirstName, c.SurName, c.BirthDate, c.BirthPlace, c.Gender, c.PhoneNumber, c.Address });
+
             foreach (var item in sonuc)
             {
                 Customer customer = new Customer();
@@ -94,8 +95,7 @@ namespace MVC_BilgeHotel.SERVICE.Options
                 customer.PhoneNumber = item.PhoneNumber;
                 customer.Address = item.Address;
                 customers.Add(customer);
-            }
-            ;
+            };
 
             return (customers);
         }

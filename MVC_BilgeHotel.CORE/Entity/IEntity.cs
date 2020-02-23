@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVC_BilgeHotel.CORE.Entity
 {
-    public interface IEntity <T>
+    public interface IEntity<T>
     {
         T ID { get; set; }
     }

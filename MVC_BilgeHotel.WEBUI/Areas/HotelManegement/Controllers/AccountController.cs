@@ -72,10 +72,9 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         [HotelMAuthFilter]
         public ActionResult AccountDetail()
         {
-
             var employeeUserDetail = Session["HMLogin"] as Employee;
             TempData["EmployeeUser"] = employeeUserDetail.FirstName + " " + employeeUserDetail.SurName;
-            
+
             return View(db.GetByID(employeeUserDetail.ID));
         }
 
@@ -93,7 +92,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
                 model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
                 model.ModifiedDate = DateTime.Now;
 
-                if(model.ImagePath != null)
+                if (model.ImagePath != null)
                 {
 
                 }
@@ -101,11 +100,11 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
                 {
                     model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Employee/", ImagePath);
                 }
-           
+
                 model.TotalPay = ((model.Hours + model.EkstraHours) * model.HourlyPay) * model.Days;
 
                 emps.Update(model);
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

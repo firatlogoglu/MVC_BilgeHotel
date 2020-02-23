@@ -16,8 +16,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
     {
         RoomService rmdb = new RoomService();
 
-
-        // GET: HotelManegement/Room
         public ActionResult Index()
         {
             return View(rmdb.GetAll().ToList());
@@ -41,7 +39,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
         public ActionResult Edit(Guid id)
         {
             return View(rmdb.GetByID(id));
-
         }
 
         [HttpPost]
@@ -50,7 +47,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             if (ModelState.IsValid)
             {
                 model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Rooms/", ImagePath);
-
 
                 model.ModifiedComputerName = Environment.MachineName;
                 model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;

@@ -24,10 +24,10 @@ namespace MVC_BilgeHotel.MODEL.Entities
         public int Hours { get; set; }
 
         [Display(Name = "Çalıştığı Gün")]
-        public int Days { get ; set; }
+        public int Days { get; set; }
 
         [Display(Name = "Ek Saat")]
-        public int EkstraHours{ get; set; }
+        public int EkstraHours { get; set; }
 
         [Display(Name = "Toplam Ücret")]
         public decimal TotalPay { get; set; }

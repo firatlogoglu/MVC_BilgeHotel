@@ -25,7 +25,7 @@ namespace MVC_BilgeHotel.MODEL.Map
             Property(x => x.Address).HasMaxLength(150);
             Property(x => x.BirthPlace).HasColumnName("BPlace");
             Property(x => x.BirthDate).HasColumnName("BDate");
-            
+
             Property(x => x.User).HasColumnName("Usr");
         }
     }

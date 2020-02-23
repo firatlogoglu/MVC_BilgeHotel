@@ -45,14 +45,13 @@ namespace MVC_BilgeHotel.CORE.Entity
         [Display(Name = "Değiştirilen PC'nin Adı")]
         public string ModifiedComputerName { get; set; }
 
-
         public string CreatedIP { get; set; }
         public string ModifiedIP { get; set; }
 
         public string CreatedComputerUsername { get; set; }
         public string ModifiedComputerUsername { get; set; }
 
-        public int? CreatedUserID { get; set; }        
+        public int? CreatedUserID { get; set; }
         public int? ModifiedUserID { get; set; }
     }
 }

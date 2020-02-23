@@ -79,7 +79,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
 
                     db.TCUpdate(model);
 
-
                     //db.GetByID(db.GetByID).GeneralStatus = CORE.Enums.GeneralStatus.Deleted;
 
                     return View();
@@ -88,7 +87,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                 if (db.CheckCustomerTCNOs(model.TCNO))
                 {
                     ViewBag.TC = "TCNO DAHA ÖNCE KAYITLARIMIZA GİRDİ";
-
                     return View();
                 }
 

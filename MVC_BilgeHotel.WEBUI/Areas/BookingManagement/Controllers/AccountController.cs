@@ -21,20 +21,19 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
             }
         }
 
-        // GET: BookingManagement/Account
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login (Employee model)
+        public ActionResult Login(Employee model)
         {
             try
             {
-                if(model.Password != null && model.EmailAddress != string.Empty)
+                if (model.Password != null && model.EmailAddress != string.Empty)
                 {
-                    if(db.CheckEmpoyeeUsers(model.EmailAddress, model.Password, MODEL.Enums.Roles.Receptionist))
+                    if (db.CheckEmpoyeeUsers(model.EmailAddress, model.Password, MODEL.Enums.Roles.Receptionist))
                     {
                         var employeeUser = db.GetByDefault(x => x.EmailAddress == model.EmailAddress);
                         Session["BMLogin"] = employeeUser;

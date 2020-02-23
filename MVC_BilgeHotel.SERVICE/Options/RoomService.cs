@@ -34,7 +34,6 @@ namespace MVC_BilgeHotel.SERVICE.Options
         public List<Room> GetRoomFull()
         {
             return db.Set<Room>().Where(x => x.RoomStatus == MVC_BilgeHotel.MODEL.Enums.RoomStatus.Full).ToList();
-            
         }
 
         //public List<Room> GetRoomEmtpyToDay()

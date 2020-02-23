@@ -14,7 +14,6 @@ namespace MVC_BilgeHotel.CORE.Entity
         [Required(ErrorMessage = "Lütfen adınızı girin"), Display(Name = "TC Kimlik No")]
         public string TCNO { get; set; }
 
-
         [Required(ErrorMessage = "Lütfen adınızı girin"), Display(Name = "Adı")]
         public string FirstName { get; set; }
 
@@ -43,6 +42,5 @@ namespace MVC_BilgeHotel.CORE.Entity
 
         [Display(Name = "Cinsiyet")]
         public Gender Gender { get; set; }
-
     }
 }

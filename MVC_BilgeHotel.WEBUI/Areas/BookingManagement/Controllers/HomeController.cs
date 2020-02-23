@@ -10,7 +10,6 @@ using System.Web.Mvc;
 namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
 {
     [BookingMAuthFilter]
-
     public class HomeController : Controller
     {
         EmployeeService esdb;
@@ -23,7 +22,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
                 esdb = new EmployeeService();
             }
 
-            if(rmsdb == null)
+            if (rmsdb == null)
             {
                 rmsdb = new RoomService();
             }
