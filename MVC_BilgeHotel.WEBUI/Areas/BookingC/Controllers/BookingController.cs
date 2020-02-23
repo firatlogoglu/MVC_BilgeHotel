@@ -36,13 +36,15 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
             b.ID = Guid.NewGuid();
 
             cb.ID = Guid.NewGuid();
-            cb.CustomerID = customerUserDetail.ID;
-            cb.ID = b.ID;
-            model.ID = cb.ID;
-            //TODO:    model.ID = cb.ID; KTROL
+
+            model.CustomerBookings = new List<CustomerBooking>()
+            {
+                new CustomerBooking {BookingID=b.ID,CustomerID = customerUserDetail.ID, ID = cb.ID}
+            };
+
             //Kişi sayısı hesapa katılmamıştır.
             model.ID = b.ID;
-
+            model.RoomID = rdb.GetByDefault(x => x.RoomNumber == "400").ID;
             DateTime dnow30 = DateTime.Now;
             dnow30 = dnow30.AddDays(30);
 
@@ -91,9 +93,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     model.TotalPrice = ((model.UnitPrice + model.ExtraPrice) * model.TotalDays) * 0.23m;
                 }
             }
-
-            //model.CustomerBookingID.Add(cb);
-            //TODO: CustomerBookinhg test edilecek
             sdb.Add(model);
             return RedirectToAction("Index");
         }
