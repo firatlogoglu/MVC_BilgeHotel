@@ -147,6 +147,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\VM\RoomBookingVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -174,18 +175,19 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.CopyComplete" />
     <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csprojAssemblyReference.cache" />
     <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.dll" />
     <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="Areas\BookingManagement\Views\web.config" />
     <Content Include="Areas\BookingManagement\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Account\Login.cshtml" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.CopyComplete" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csprojAssemblyReference.cache" />
     <Content Include="Areas\BookingManagement\Views\Home\Index.cshtml" />
     <Content Include="Areas\HotelManegement\Views\web.config" />
     <Content Include="Areas\HotelManegement\Views\_ViewStart.cshtml" />
@@ -217,7 +219,10 @@
     <Content Include="Areas\BookingManagement\Views\Booking\Create.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Booking\Edit.cshtml" />
     <Content Include="Areas\HotelManegement\Views\Account\AccountDetail.cshtml" />
-    <Content Include="obj\Debug\build.force" />
+    <Content Include="Areas\BookingC\Views\Booking\Find.cshtml" />
+    <Content Include="Areas\BookingC\Views\Booking\FindRooms.cshtml" />
+    <Content Include="Areas\BookingC\Views\Booking\CreateLast.cshtml" />
+    <Content Include="Areas\BookingC\Views\Booking\Detail.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -266,7 +271,6 @@
     <Folder Include="Areas\HotelManegement\Views\Booking\" />
     <Folder Include="bin\roslyn\" />
     <Folder Include="bin\tr\" />
-    <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

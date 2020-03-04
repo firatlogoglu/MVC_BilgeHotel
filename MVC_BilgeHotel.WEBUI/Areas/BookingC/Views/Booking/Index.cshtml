@@ -6,7 +6,7 @@
 }
 
 <p>
-    @Html.ActionLink("Yeni Rezervasyon Ekle", "Create")
+    @Html.ActionLink("Yeni Rezervasyon Ekle", "Find")
 </p>
 <table class="table">
     <tr>
@@ -38,10 +38,7 @@
             @Html.DisplayNameFor(model => model.Paid)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerBookings)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomID)
+            @Html.DisplayNameFor(model => model.Room.RoomNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.GeneralStatus)
@@ -51,44 +48,45 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.InDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OutDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CostomerCount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalDays)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Package)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Paid)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerBookings)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GeneralStatus)
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.InDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OutDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CostomerCount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalDays)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Package)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Paid)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Room.RoomNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GeneralStatus)
+    </td>
+
+    <td>
+        @Html.ActionLink("Ayrıntılar", "Detail", new { ID = item.ID}) <i class="glyphicon glyphicon-pencil"></i> |
+    </td>
+</tr>
 }
 
 </table>

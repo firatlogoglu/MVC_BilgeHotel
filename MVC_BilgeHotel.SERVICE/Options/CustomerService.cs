@@ -56,7 +56,6 @@ namespace MVC_BilgeHotel.SERVICE.Options
         /// </summary>
         /// <param name="_email">E-Posta Adresini Giriniz</param>
         /// <returns></returns>
-
         public bool CheckEmailAd(string _email)
         {
             return Any(x => x.EmailAddress == _email);
@@ -76,7 +75,7 @@ namespace MVC_BilgeHotel.SERVICE.Options
              db.CustomerBookings,
              bk => bk.bk.ID,
              c => c.BookingID,
-             (bkk, cbb) => new { bkk.bk, cbb.CustomerID })
+             (bkk, cbb) => new { bkk.bk, cbb.CustomerID }).Where(x => x.bk.Entry == true)
 
              .Join(db.Customers,
              cb => cb.CustomerID,

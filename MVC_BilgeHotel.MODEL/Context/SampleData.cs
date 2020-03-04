@@ -151,11 +151,11 @@ namespace MVC_BilgeHotel.MODEL.Context
 
             #region 1.Kat Odalar
             rooms.Add(new Room() { ID = room100, RoomNumber = "100", RoomStatus = Enums.RoomStatus.Full, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
-            rooms.Add(new Room() { ID = room101, RoomNumber = "101", RoomStatus = Enums.RoomStatus.Full, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
-            rooms.Add(new Room() { ID = room102, RoomNumber = "102", RoomStatus = Enums.RoomStatus.Full, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
-            rooms.Add(new Room() { ID = room103, RoomNumber = "103", RoomStatus = Enums.RoomStatus.Full, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
+            rooms.Add(new Room() { ID = room101, RoomNumber = "101", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
+            rooms.Add(new Room() { ID = room102, RoomNumber = "102", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
+            rooms.Add(new Room() { ID = room103, RoomNumber = "103", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
             rooms.Add(new Room() { ID = room104, RoomNumber = "104", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
-            rooms.Add(new Room() { ID = room105, RoomNumber = "105", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
+            rooms.Add(new Room() { ID = room105, RoomNumber = "105", RoomStatus = Enums.RoomStatus.Full, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
             rooms.Add(new Room() { ID = room106, RoomNumber = "106", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
             rooms.Add(new Room() { ID = room107, RoomNumber = "107", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
             rooms.Add(new Room() { ID = room108, RoomNumber = "108", RoomStatus = Enums.RoomStatus.Empty, Capacity = 1, RoomTypes = Enums.RoomTypes.Single, ImagePath = single });
@@ -470,37 +470,39 @@ namespace MVC_BilgeHotel.MODEL.Context
 
             #region Müşteriler
 
-            Customer cs1 = new Customer();
-            cs1.ID = c1;
-            cs1.TCNO = "22222222222";
-            cs1.FirstName = "Fırat";
-            cs1.SurName = "Loğoğlu";
-            cs1.EmailAddress = "firatlogoglu@mmm.com";
-            cs1.Gender = CORE.Enums.Gender.Male;
-            cs1.Address = "Papatya Sok.";
-            cs1.User = false;
-            cs1.BirthDate = new DateTime(1994, 1, 4);
-            cs1.BirthPlace = "Biga";
-            cs1.Password = "1234";
-            cs1.PhoneNumber = "05555555555";
-
-            Customer cs2 = new Customer();
-            cs2.ID = c2;
-            cs2.TCNO = "2313412421";
-            cs2.FirstName = "Fırat";
-            cs2.SurName = "Loğoğlu";
-            cs2.EmailAddress = "firatlogoglu@mmm.com";
-            cs2.Gender = CORE.Enums.Gender.Male;
-            cs2.Address = "Papatya Sok.";
-            cs2.User = false;
-            cs2.BirthDate = new DateTime(1994, 1, 4);
-            cs2.BirthPlace = "Biga";
-            cs2.Password = "1234";
-            cs2.PhoneNumber = "05555555555";
-
             IList<Customer> customers = new List<Customer>();
 
+            customers.Add(new Customer()
+            {
+                ID = c1,
+                TCNO = "22222222222",
+                FirstName = "Fırat",
+                SurName = "Loğoğlu",
+                EmailAddress = "firatlogoglu@mmm.com",
+                Gender = CORE.Enums.Gender.Male,
+                Address = "Papatya Sok.",
+                User = false,
+                BirthDate = new DateTime(1994, 1, 4),
+                BirthPlace = "Biga",
+                Password = "1234",
+                PhoneNumber = "05555555555",
+            });
 
+            customers.Add(new Customer()
+            {
+                ID = c2,
+                TCNO = "2313412421",
+                FirstName = "Hakkı",
+                SurName = "Kelleci",
+                EmailAddress = "hakkikelleci@mmm.com",
+                Gender = CORE.Enums.Gender.Male,
+                Address = "Papatya Sok.",
+                User = false,
+                BirthDate = new DateTime(1994, 1, 4),
+                BirthPlace = "Biga",
+                Password = "1234",
+                PhoneNumber = "05555555555",
+            });
 
             customers.Add(new Customer()
             {
@@ -514,74 +516,101 @@ namespace MVC_BilgeHotel.MODEL.Context
                 User = false,
                 BirthDate = new DateTime(1991, 1, 1),
                 BirthPlace = "Hatay",
-                PhoneNumber = "055511234"
+                PhoneNumber = "055511234",
             });
 
-            //customers.Add(new Customer()
-            //{
-            //    ID = c4,
-            //    TCNO = "12312312",
-            //    FirstName = "Derya",
-            //    SurName = "Demirci",
-            //    EmailAddress = "deryademirci@mmm.com",
-            //    Gender = CORE.Enums.Gender.Female,
-            //    Address = "Hotel Sok.",
-            //    User = true,
-            //    BirthDate = new DateTime(1970, 1, 1),
-            //    BirthPlace = "Antakya",
-            //    PhoneNumber = "0555112224"
-            //});
+            customers.Add(new Customer()
+            {
+                ID = c4,
+                TCNO = "12312312",
+                FirstName = "Derya",
+                SurName = "Demirci",
+                EmailAddress = "deryademirci@mmm.com",
+                Gender = CORE.Enums.Gender.Female,
+                Address = "Hotel Sok.",
+                User = true,
+                BirthDate = new DateTime(1970, 1, 1),
+                BirthPlace = "Antakya",
+                PhoneNumber = "0555112224",
+            });
 
-            //customers.Add(new Customer()
-            //{
-            //    ID = c5,
-            //    TCNO = "12312312",
-            //    FirstName = "Hadan",
-            //    SurName = "Emin",
-            //    EmailAddress = "hadanemin@mmm.com",
-            //    Gender = CORE.Enums.Gender.Female,
-            //    Address = "Çıkmaz Sok.",
-            //    User = true,
-            //    BirthDate = new DateTime(1970, 1, 1),
-            //    BirthPlace = "İstanbul",
-            //    PhoneNumber = "05514242"
-            //});
+            customers.Add(new Customer()
+            {
+                ID = c5,
+                TCNO = "12312312",
+                FirstName = "Hadan",
+                SurName = "Emin",
+                EmailAddress = "hadanemin@mmm.com",
+                Gender = CORE.Enums.Gender.Female,
+                Address = "Çıkmaz Sok.",
+                User = true,
+                BirthDate = new DateTime(1970, 1, 1),
+                BirthPlace = "İstanbul",
+                PhoneNumber = "05514242"
+            });
 
-            //customers.Add(new Customer()
-            //{
-            //    ID = c6,
-            //    TCNO = "12312312",
-            //    FirstName = "Hadan",
-            //    SurName = "Emin",
-            //    EmailAddress = "hadanemin@mmm.com",
-            //    Gender = CORE.Enums.Gender.Female,
-            //    Address = "Çıkmaz Sok.",
-            //    User = true,
-            //    BirthDate = new DateTime(1970, 1, 1),
-            //    BirthPlace = "İstanbul",
-            //    PhoneNumber = "05514242"
-            //});
+            customers.Add(new Customer()
+            {
+                ID = c6,
+                TCNO = "2341235445",
+                FirstName = "Mahmut",
+                SurName = "Düzyatan",
+                EmailAddress = "mahmutduzyatan@mmm.com",
+                Gender = CORE.Enums.Gender.Male,
+                Address = "Çıkmaz Sok.",
+                User = true,
+                BirthDate = new DateTime(1970, 4, 1),
+                BirthPlace = "Manisa",
+                PhoneNumber = "0551231312"
+            });
 
             context.Customers.AddRange(customers);
             #endregion
 
-            #region Bokking 
-            IList<Booking> bookings = new List<Booking>();
-
-            CustomerBooking zzz = new CustomerBooking()
+            #region Bookings 
+            CustomerBooking cusbk1 = new CustomerBooking()
             {
                 ID = cb1,
-                Customer = cs1,
+                CustomerID = c1,
                 BookingID = boook1,
             };
 
-            CustomerBooking zz2 = new CustomerBooking()
+            CustomerBooking cusbk2 = new CustomerBooking()
             {
                 ID = cb2,
-                Customer = cs1,
-                BookingID = boook1,
+                CustomerID = c1,
+                BookingID = boook2,
             };
 
+            CustomerBooking cusbk3 = new CustomerBooking()
+            {
+                ID = cb3,
+                CustomerID = c3,
+                BookingID = boook3,
+            };
+
+            CustomerBooking cusbk4 = new CustomerBooking()
+            {
+                ID = cb4,
+                CustomerID = c4,
+                BookingID = boook4,
+            };
+
+            CustomerBooking cusbk5 = new CustomerBooking()
+            {
+                ID = cb5,
+                CustomerID = c5,
+                BookingID = boook5,
+            };
+
+            CustomerBooking cusbk6 = new CustomerBooking()
+            {
+                ID = cb6,
+                CustomerID = c6,
+                BookingID = boook6,
+            };
+
+            IList<Booking> bookings = new List<Booking>();
             bookings.Add(new Booking()
             {
                 ID = boook1,
@@ -591,125 +620,89 @@ namespace MVC_BilgeHotel.MODEL.Context
                 OutDate = new DateTime(2020, 5, 25),
                 CostomerCount = 1,
                 RoomID = room100,
+                Paid = true,
+                Entry = true,
                 CustomerBookings = new List<CustomerBooking>()
-                { zzz,zz2}
-                ,
+                { cusbk1},
             });
 
-            //bookings.Add(new Booking()
-            //{
-            //    ID = boook2,
-            //    //CustomerBookingID = cb2,
-            //    GeneralStatus = CORE.Enums.GeneralStatus.Active,
-            //    Package = Enums.BookingPackages.AllInclusive,
-            //    InDate = new DateTime(2020, 3, 1),
-            //    OutDate = new DateTime(2020, 3, 25),
-            //    CostomerCount = 1,
-            //    RoomID = room101,
+            bookings.Add(new Booking()
+            {
+                ID = boook2,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 3, 1),
+                OutDate = new DateTime(2020, 3, 25),
+                CostomerCount = 1,
+                RoomID = room101,
+                Paid = true,
+                Entry = false,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk2},
+            });
 
-            //});
+            bookings.Add(new Booking()
+            {
+                ID = boook3,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 4, 1),
+                OutDate = new DateTime(2020, 5, 15),
+                CostomerCount = 1,
+                RoomID = room102,
+                Paid = false,
+                Entry = false,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk3},
+            });
 
-            //bookings.Add(new Booking()
-            //{
-            //    ID = boook3,
-            //    //CustomerBookingID = cb3,
-            //    GeneralStatus = CORE.Enums.GeneralStatus.Active,
-            //    Package = Enums.BookingPackages.AllInclusive,
-            //    InDate = new DateTime(2020, 4, 1),
-            //    OutDate = new DateTime(2020, 5, 15),
-            //    CostomerCount = 1,
-            //    RoomID = room102,
-            //});
+            bookings.Add(new Booking()
+            {
+                ID = boook4,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 4, 1),
+                OutDate = new DateTime(2020, 4, 15),
+                CostomerCount = 1,
+                Paid = false,
+                Entry = false,
+                RoomID = room103,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk4},
+            });
 
-            //bookings.Add(new Booking()
-            //{
-            //    ID = boook4,
-            //    //CustomerBookingID = cb4,
-            //    GeneralStatus = CORE.Enums.GeneralStatus.Active,
-            //    Package = Enums.BookingPackages.AllInclusive,
-            //    InDate = new DateTime(2020, 4, 1),
-            //    OutDate = new DateTime(2020, 4, 15),
-            //    CostomerCount = 1,
-            //    RoomID = room103,
+            bookings.Add(new Booking()
+            {
+                ID = boook5,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 2, 1),
+                OutDate = new DateTime(2020, 4, 1),
+                CostomerCount = 1,
+                RoomID = room105,
+                Paid = true,
+                Entry = true,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk5},
+            });
 
-            //});
-
-            //bookings.Add(new Booking()
-            //{
-            //    ID = boook5,
-            //    //CustomerBookingID = cb5,
-            //    GeneralStatus = CORE.Enums.GeneralStatus.Active,
-            //    Package = Enums.BookingPackages.AllInclusive,
-            //    InDate = new DateTime(2020, 2, 1),
-            //    OutDate = new DateTime(2020, 4, 1),
-            //    CostomerCount = 1,
-            //    RoomID = room105,
-
-            //});
-
-            //bookings.Add(new Booking()
-            //{
-            //    ID = boook6,
-            //    //CustomerBookingID = cb6,
-            //    GeneralStatus = CORE.Enums.GeneralStatus.Active,
-            //    Package = Enums.BookingPackages.AllInclusive,
-            //    InDate = new DateTime(2020, 5, 1),
-            //    OutDate = new DateTime(2020, 6, 1),
-            //    CostomerCount = 1,
-            //    RoomID = room105,
-
-            //});
+            bookings.Add(new Booking()
+            {
+                ID = boook6,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2020, 5, 1),
+                OutDate = new DateTime(2020, 6, 1),
+                CostomerCount = 1,
+                RoomID = room105,
+                Paid = false,
+                Entry = false,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk6},
+            });
 
             context.Bookings.AddRange(bookings);
             #endregion
-
-
-            IList<CustomerBooking> customerBookings = new List<CustomerBooking>();
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb1,
-            //    BookingID = boook1,
-            //    CustomerID = c1,
-            //});
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb2,
-            //    BookingID = boook2,
-            //    CustomerID = c1,
-            //});
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb3,
-            //    BookingID = boook3,
-            //    CustomerID = c3,
-            //});
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb4,
-            //    BookingID = boook4,
-            //    CustomerID = c4,
-            //});
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb5,
-            //    BookingID = boook5,
-            //    CustomerID = c5,
-            //});
-
-            //customerBookings.Add(new CustomerBooking()
-            //{
-            //    ID = cb6,
-            //    BookingID = boook6,
-            //    CustomerID = c6,
-            //});
-
-            //context.CustomerBookings.AddRange(customerBookings);
-
 
             base.Seed(context);
         }

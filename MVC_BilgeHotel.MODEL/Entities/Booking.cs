@@ -14,6 +14,8 @@ namespace MVC_BilgeHotel.MODEL.Entities
         public Booking()
         {
             CustomerBookings = new List<CustomerBooking>();
+
+            Entry = false;
         }
 
         [Display(Name = "Giriş Tarihi")]
@@ -48,6 +50,8 @@ namespace MVC_BilgeHotel.MODEL.Entities
         [Display(Name = "Ödendi")]
         public bool Paid { get; set; }
 
+        [Display(Name = "GirişYapıldı")]
+        public bool Entry { get; set; }
 
         public Guid RoomID { get; set; }
 
