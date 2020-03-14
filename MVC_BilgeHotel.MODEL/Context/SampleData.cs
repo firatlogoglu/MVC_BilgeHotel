@@ -18,6 +18,8 @@ namespace MVC_BilgeHotel.MODEL.Context
             //enable-migrations
             //update-database -Verbose
 
+            //TODO: Ote Fiyat Hesaplanması: Fiyat hesaplaması yapılacak.: 
+
             Guid c1 = Guid.NewGuid();
             Guid c2 = Guid.NewGuid();
             Guid c3 = Guid.NewGuid();
@@ -31,6 +33,8 @@ namespace MVC_BilgeHotel.MODEL.Context
             Guid cb4 = Guid.NewGuid();
             Guid cb5 = Guid.NewGuid();
             Guid cb6 = Guid.NewGuid();
+            Guid cb7 = Guid.NewGuid();
+            Guid cb8 = Guid.NewGuid();
 
             Guid boook1 = Guid.NewGuid();
             Guid boook2 = Guid.NewGuid();
@@ -38,6 +42,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             Guid boook4 = Guid.NewGuid();
             Guid boook5 = Guid.NewGuid();
             Guid boook6 = Guid.NewGuid();
+            Guid boook7 = Guid.NewGuid();
 
             #region Odalar
 
@@ -267,7 +272,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp1,
-                TCNO = "111111111",
+                TCNO = "11111111111",
                 BirthDate = new DateTime(1990, 4, 1),
                 BirthPlace = "İstanbul",
                 FirstName = "Mehmet",
@@ -292,7 +297,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp2,
-                TCNO = "100000000",
+                TCNO = "22222222222",
                 BirthDate = new DateTime(1991, 3, 1),
                 BirthPlace = "Çanakkale",
                 FirstName = "Ayşe",
@@ -317,7 +322,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp3,
-                TCNO = "12324233",
+                TCNO = "33333333333",
                 BirthDate = new DateTime(1990, 5, 1),
                 BirthPlace = "Adana",
                 FirstName = "Fırat",
@@ -342,7 +347,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp4,
-                TCNO = "234242333",
+                TCNO = "44444444444",
                 BirthDate = new DateTime(1993, 6, 4),
                 BirthPlace = "Tekirdağ",
                 FirstName = "Fatma",
@@ -367,7 +372,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp5,
-                TCNO = "532564345",
+                TCNO = "55555555555",
                 BirthDate = new DateTime(1988, 5, 4),
                 BirthPlace = "Hatay",
                 FirstName = "Ali",
@@ -392,7 +397,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp6,
-                TCNO = "532564552",
+                TCNO = "66666666666",
                 BirthDate = new DateTime(1982, 5, 4),
                 BirthPlace = "Sinop",
                 FirstName = "Gülistan",
@@ -417,7 +422,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emrp7,
-                TCNO = "80153652",
+                TCNO = "77777777777",
                 BirthDate = new DateTime(1991, 10, 10),
                 BirthPlace = "Ankara",
                 FirstName = "Mustafa",
@@ -443,7 +448,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             employees.Add(new Employee()
             {
                 ID = emma1,
-                TCNO = "801231",
+                TCNO = "88888888888",
                 BirthDate = new DateTime(1991, 10, 10),
                 BirthPlace = "Ankara",
                 FirstName = "Hasan",
@@ -475,7 +480,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c1,
-                TCNO = "22222222222",
+                TCNO = "21111111111",
                 FirstName = "Fırat",
                 SurName = "Loğoğlu",
                 EmailAddress = "firatlogoglu@mmm.com",
@@ -491,7 +496,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c2,
-                TCNO = "2313412421",
+                TCNO = "22222222222",
                 FirstName = "Hakkı",
                 SurName = "Kelleci",
                 EmailAddress = "hakkikelleci@mmm.com",
@@ -507,7 +512,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c3,
-                TCNO = "12312312",
+                TCNO = "23333333333",
                 FirstName = "Hasan",
                 SurName = "Deryacıoğlu",
                 EmailAddress = "hasanderycioglu@mmm.com",
@@ -522,7 +527,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c4,
-                TCNO = "12312312",
+                TCNO = "24444444444",
                 FirstName = "Derya",
                 SurName = "Demirci",
                 EmailAddress = "deryademirci@mmm.com",
@@ -537,7 +542,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c5,
-                TCNO = "12312312",
+                TCNO = "25555555555",
                 FirstName = "Hadan",
                 SurName = "Emin",
                 EmailAddress = "hadanemin@mmm.com",
@@ -552,7 +557,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             customers.Add(new Customer()
             {
                 ID = c6,
-                TCNO = "2341235445",
+                TCNO = "26666666666",
                 FirstName = "Mahmut",
                 SurName = "Düzyatan",
                 EmailAddress = "mahmutduzyatan@mmm.com",
@@ -578,7 +583,7 @@ namespace MVC_BilgeHotel.MODEL.Context
             CustomerBooking cusbk2 = new CustomerBooking()
             {
                 ID = cb2,
-                CustomerID = c1,
+                CustomerID = c2,
                 BookingID = boook2,
             };
 
@@ -610,6 +615,20 @@ namespace MVC_BilgeHotel.MODEL.Context
                 BookingID = boook6,
             };
 
+            CustomerBooking cusbk7 = new CustomerBooking()
+            {
+                ID = cb7,
+                CustomerID = c1,
+                BookingID = boook7,
+            };
+
+            CustomerBooking cusbk8 = new CustomerBooking()
+            {
+                ID = cb8,
+                CustomerID = c3,
+                BookingID = boook7,
+            };
+
             IList<Booking> bookings = new List<Booking>();
             bookings.Add(new Booking()
             {
@@ -619,9 +638,10 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 2, 1),
                 OutDate = new DateTime(2020, 5, 25),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 RoomID = room100,
                 Paid = true,
-                Entry = true,
+                Entry = true,               
                 CustomerBookings = new List<CustomerBooking>()
                 { cusbk1},
             });
@@ -634,6 +654,7 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 3, 1),
                 OutDate = new DateTime(2020, 3, 25),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 RoomID = room101,
                 Paid = true,
                 Entry = false,
@@ -649,6 +670,7 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 4, 1),
                 OutDate = new DateTime(2020, 5, 15),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 RoomID = room102,
                 Paid = false,
                 Entry = false,
@@ -664,6 +686,7 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 4, 1),
                 OutDate = new DateTime(2020, 4, 15),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 Paid = false,
                 Entry = false,
                 RoomID = room103,
@@ -679,6 +702,7 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 2, 1),
                 OutDate = new DateTime(2020, 4, 1),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 RoomID = room105,
                 Paid = true,
                 Entry = true,
@@ -694,11 +718,28 @@ namespace MVC_BilgeHotel.MODEL.Context
                 InDate = new DateTime(2020, 5, 1),
                 OutDate = new DateTime(2020, 6, 1),
                 CostomerCount = 1,
+                AddCostomerCount = 1,
                 RoomID = room105,
                 Paid = false,
                 Entry = false,
                 CustomerBookings = new List<CustomerBooking>()
                 { cusbk6},
+            });
+
+            bookings.Add(new Booking()
+            {
+                ID = boook7,
+                GeneralStatus = CORE.Enums.GeneralStatus.Active,
+                Package = Enums.BookingPackages.AllInclusive,
+                InDate = new DateTime(2021, 1, 1),
+                OutDate = new DateTime(2021, 1, 30),
+                CostomerCount = 3,
+                AddCostomerCount = 2,
+                RoomID = room110,
+                Paid = false,
+                Entry = false,
+                CustomerBookings = new List<CustomerBooking>()
+                { cusbk7,cusbk8},
             });
 
             context.Bookings.AddRange(bookings);

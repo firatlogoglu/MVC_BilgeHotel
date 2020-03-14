@@ -12,18 +12,21 @@ namespace MVC_BilgeHotel.SERVICE.Options
 {
     public class CustomerService : BaseService<Customer>
     {
-        private static ProjectContext _database;
-        private static ProjectContext db
-        {
-            get
-            {
-                if (_database == null)
-                {
-                    _database = new ProjectContext();
-                }
-                return _database;
-            }
-        }
+        //private static ProjectContext _database;
+        //private static ProjectContext db
+        //{
+        //    get
+        //    {
+        //        if (_database == null)
+        //        {
+        //            _database = new ProjectContext();
+        //        }
+        //        return _database;
+        //    }
+        //}
+
+        ProjectContext db = new ProjectContext();
+
 
         /// <summary>
         /// 

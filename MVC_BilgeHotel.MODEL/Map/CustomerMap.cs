@@ -12,8 +12,6 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public CustomerMap()
         {
-            //TODO: ID ISOPTION KALDIRILACAK
-
             Property(x => x.TCNO).HasColumnName("TCNO");
             Property(x => x.FirstName).HasMaxLength(50).HasColumnName("FName");
             Property(x => x.SurName).HasMaxLength(50).HasColumnName("SName");

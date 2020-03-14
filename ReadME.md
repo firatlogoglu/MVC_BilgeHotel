@@ -1,4 +1,4 @@
-# Bilge Hotel MVC Projesi
+﻿# Bilge Hotel MVC Projesi
 
 ## Oluşturulan Katmanlar
 
@@ -14,11 +14,14 @@
 * CoreMap: CoreEntity içerisindeki özelliklere çeşitli isimledirmeler ve sınırlandırılmalar verilmiştir.
 ### 2 - MVC_BilgeHotel.MODEL
 #### 2.1 - Entities
-* Booking
-* CustomerBooking
-* Customer
-* Employee
-* Room
+* 2.1.1 Booking
+* 2.1.2 CustomerBooking
+* 2.1.3 Customer
+* 2.1.4 Employee
+* 2.1.5 Room
+* 2.1.6.1 VMs
+* 2.1.6.1.1 RoomBookingVM
+* 2.1.6.1.2 CustomerBookingsVM
 #### 2.2 - Enums
 * Roles
 * RoomStatus
@@ -70,4 +73,5 @@
 <h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
 
 ### 6 - MVC_BilgeHotel.API
-
+#### Controllers
+* HomeController: FullRoomsCustomers, O günkü odalarda kalan müşterileri XML formatında getirir.

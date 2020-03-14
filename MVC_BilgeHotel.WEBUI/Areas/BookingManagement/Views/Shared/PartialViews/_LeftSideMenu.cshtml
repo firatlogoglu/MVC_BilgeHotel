@@ -1,5 +1,7 @@
-﻿<ul class="navbar navbar-default navbar-left">
-    @Html.ActionLink("Boş Odalar", "Index", "Home", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block" })
-    @Html.ActionLink("Rezervasyon", "Index", "Booking", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block" })
-    @Html.ActionLink("Oturumu Kapat", "Logout", "Account", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block" })
+﻿<ul class="left">
+    @Html.ActionLink("Boş Odalar", "Index", "Home", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block btn-primary" })
+    @Html.ActionLink("Rezervasyon", "Index", "Booking", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block btn-primary" })
+
+    @Html.ActionLink("Kişisel Bilgileriniz", "AccountDetail", "Account", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block btn-info" })
+    @Html.ActionLink("Oturumu Kapat", "Logout", "Account", new { area = "BookingManagement" }, new { @class = "btn btn-lg btn-block btn-danger" })
 </ul>

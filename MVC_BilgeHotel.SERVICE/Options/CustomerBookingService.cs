@@ -10,6 +10,9 @@ namespace MVC_BilgeHotel.SERVICE.Options
 {
     public class CustomerBookingService : BaseService<CustomerBooking>
     {
-
+        public bool CheckBookingCustomer(string _TCNO, Guid _BID)
+        {
+            return Any(z => z.Customer.TCNO == _TCNO && z.BookingID == _BID);
+        }
     }
 }

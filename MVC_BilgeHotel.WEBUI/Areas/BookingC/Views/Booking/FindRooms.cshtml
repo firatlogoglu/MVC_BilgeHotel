@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Room>
 @{
-    ViewBag.Title = "RoomSelection";
+    ViewBag.Title = "Oda Seçimi";
     Layout = "~/Areas/BookingC/Views/Shared/_BookingCLLayout.cshtml";
 }
 
@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.GeneralStatus)
             </th>
             <th>
-                <i class="glyphicon glyphicon-pencil"></i> <i class="glyphicon glyphicon-trash"></i> Düzen/Sil
+                <i class="glyphicon glyphicon-star"></i> Odayı Seç
             </th>
         </tr>
     </thead>
@@ -46,7 +46,7 @@
                 <td>@room.GeneralStatus</td>
 
                 <td>
-                    @Html.ActionLink("Düzenle", "Create", new { RoomID = room.ID, InDate = TempData["InDate"], OutDate = TempData["OutDate"], CostomerCount = TempData["CostomerCount"]}) <i class="glyphicon glyphicon-pencil"></i> |
+                    @Html.ActionLink("Seç", "Create", new { RoomID = room.ID, InDate = TempData["InDate"], OutDate = TempData["OutDate"], CostomerCount = TempData["CostomerCount"] }) <i class="glyphicon glyphicon-star"></i>
                 </td>
             </tr>
         }

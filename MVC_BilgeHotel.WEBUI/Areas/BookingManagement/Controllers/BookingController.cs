@@ -10,10 +10,14 @@ using System.Web.Mvc;
 
 namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
 {
+    //TODO: Yeni rezervasyon ekle ayarlanacak - Kişi ekleme - ODO - ödeme vs.
+    //TODO: Çalışan kendi kişisel bilgilerini gösteme ve değiştirme sayfası yapılacak    
+    //TODO: O GÜN AYRILACAK VE GİRİŞ YAPACA REZARFONLAR ANA SAYFADA GÖRÜTÜLE
     [BookingMAuthFilter]
     public class BookingController : Controller
     {
         BookingService sdb = new BookingService();
+        CustomerBookingService cbs = new CustomerBookingService();
         public ActionResult Index()
         {
             return View(sdb.GetAll());
@@ -107,6 +111,11 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public ActionResult BookingCustomers()
+        {
+            return View(cbs.GetAll().ToList());
         }
     }
 }

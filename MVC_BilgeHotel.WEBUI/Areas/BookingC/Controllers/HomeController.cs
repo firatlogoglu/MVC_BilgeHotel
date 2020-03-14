@@ -1,6 +1,4 @@
-﻿using MVC_BilgeHotel.MODEL.Entities;
-using MVC_BilgeHotel.SERVICE.Options;
-using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
+﻿using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +10,10 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
     [CustomerAuthFilter]
     public class HomeController : Controller
     {
-        BookingService sdb = new BookingService();
-
         public ActionResult Index()
         {
             return View();
         }
-        Customer cs1 = new Customer();
 
         public ActionResult BookingHistory()
         {

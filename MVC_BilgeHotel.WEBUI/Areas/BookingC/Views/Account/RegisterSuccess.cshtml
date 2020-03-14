@@ -1,8 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "RegisterSuccess";
+    ViewBag.Title = "Kayıt İşlemi Başarılı";
     Layout = "~/Areas/BookingC/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RegisterSuccess</h2>
+<h2>@ViewBag.Title</h2>
 
+<hr />
+@{
+    @TempData["CustomerAddSuccessful"]
+    TempData["CustomerAddSuccessful"] = null;
+}
+<hr />
+
+@Html.ActionLink("Oturum Açma Sayfasına Geri Dön", "Login", "Account", new { area = "BookingC" }, new { @class = "btn btn-primary" })

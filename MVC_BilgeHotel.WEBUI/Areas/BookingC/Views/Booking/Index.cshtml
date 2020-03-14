@@ -44,49 +44,68 @@
             @Html.DisplayNameFor(model => model.GeneralStatus)
         </th>
 
-        <th></th>
+        <th>Kişiler</th>
+        <th>Öde</th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.InDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.OutDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CostomerCount)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UnitPrice)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TotalPrice)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TotalDays)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Package)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Paid)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Room.RoomNumber)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.GeneralStatus)
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostomerCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneralStatus)
+            </td>
 
-    <td>
-        @Html.ActionLink("Ayrıntılar", "Detail", new { ID = item.ID}) <i class="glyphicon glyphicon-pencil"></i> |
-    </td>
-</tr>
-}
+            <td>
+                @{
+                    if (item.AddCostomerCount == item.CostomerCount)
+                    {
+                        @Html.ActionLink("Kişileri Görüntüle", "BookingCustomers", new { ID = item.ID }) <i class="glyphicon glyphicon-user"></i>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Kişi Ekle", "BookingCustomers", new { ID = item.ID }) <i class="glyphicon glyphicon-user"></i> @Html.Label((item.CostomerCount - item.AddCostomerCount) + "+".ToString())
+                    }
+                }
+            </td>
+
+            <td>
+                @if (item.Paid == false && item.Package == MVC_BilgeHotel.MODEL.Enums.BookingPackages.AllInclusive)
+                {
+                    @Html.ActionLink("Öde", "Details", new { ID = item.ID, RoomNumber = item.Room.RoomNumber }) <i class="glyphicon glyphicon-credit-card"></i>
+                }
+
+            </td>
+        </tr>
+    }
 
 </table>

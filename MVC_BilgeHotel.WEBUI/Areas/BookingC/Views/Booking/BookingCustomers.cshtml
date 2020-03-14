@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CustomerBookingsVM>
+
+@{
+    int i = 1;
+    ViewBag.Title = "Rezervasyondaki Kişiler";
+    Layout = "~/Areas/BookingC/Views/Shared/_BookingCLLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<hr />
+@{
+    @TempData["BookingCustomerSuccessful"]
+    TempData["BookingCustomerSuccessful"] = null;
+}
+<hr />
+
+<p>
+    @foreach (var item in Model)
+    {
+
+        if (item.AddCostomerCount != item.CostomerCount && i == 1)
+        {
+            @Html.ActionLink("Kişi Ekle", "FindCustomer", new { BookingID = item.BookingID })
+            <br />
+
+            i = i + 1;
+        }
+    }
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TCNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TCNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthPlace)
+            </td>
+            <td>
+                @Html.EnumDropDownListFor(modelItem => item.Gender, new { @disabled = "disabled" })
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            </td>
+        </tr>
+    }
+
+</table>

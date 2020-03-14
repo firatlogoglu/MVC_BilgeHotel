@@ -12,7 +12,6 @@ namespace MVC_BilgeHotel.MODEL.Map
     {
         public EmployeeMap()
         {
-            //TODO: ID ISOPTION KALDIRILACAK
             Property(x => x.FirstName).HasMaxLength(50).HasColumnName("FName");
             Property(x => x.SurName).HasMaxLength(50).HasColumnName("SName");
             Property(x => x.Password).HasMaxLength(100).HasColumnName("Pswrd");

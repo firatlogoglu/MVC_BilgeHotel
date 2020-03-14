@@ -77,33 +77,33 @@
     <tbody>
         @foreach (var emp in Model)
         {
-        <tr>
-            <td>
-                <img src="@emp.ImagePath" style="width:50px; height:50px" />
-            </td>
-            <td>@emp.TCNO</td>
-            <td>@emp.FirstName</td>
-            <td>@emp.SurName</td>
-            <td>@emp.Gender</td>
-            <td>@emp.EmailAddress</td>
-            <td>@emp.Address</td>
-            <td>@emp.Role</td>
-            <td>@emp.BirthPlace</td>
-            <td>@emp.BirthDate.ToShortDateString()</td>
-            <td>@emp.HourlyPay</td>
-            <td>@emp.Hours</td>
-            <td>@emp.EkstraHours</td>
-            <td>@emp.Days</td>
-            <td>@emp.TotalPay</td>
-            <td>@emp.Paid</td>
-            <td>@emp.Shift</td>
-            <td>@emp.GeneralStatus</td>
+            <tr>
+                <td>
+                    <img src="@emp.ImagePath" style="width:50px; height:50px" />
+                </td>
+                <td>@emp.TCNO</td>
+                <td>@emp.FirstName</td>
+                <td>@emp.SurName</td>
+                <td>@emp.Gender</td>
+                <td>@emp.EmailAddress</td>
+                <td>@emp.Address</td>
+                <td>@emp.Role</td>
+                <td>@emp.BirthPlace</td>
+                <td>@emp.BirthDate.ToShortDateString()</td>
+                <td>@emp.HourlyPay</td>
+                <td>@emp.Hours</td>
+                <td>@emp.EkstraHours</td>
+                <td>@emp.Days</td>
+                <td>@emp.TotalPay</td>
+                <td>@emp.Paid</td>
+                <td>@emp.Shift</td>
+                <td>@emp.GeneralStatus</td>
 
-            <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id = emp.ID }) <i class="glyphicon glyphicon-pencil"></i> |
-                @Html.ActionLink("Sil", "Delete", new { id = emp.ID }) <i class="glyphicon glyphicon-trash"></i>
-            </td>
-        </tr>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = emp.ID }) <i class="glyphicon glyphicon-pencil"></i> |
+                    @Html.ActionLink("Sil", "Delete", new { id = emp.ID }) <i class="glyphicon glyphicon-trash"></i>
+                </td>
+            </tr>
         }
     </tbody>
 

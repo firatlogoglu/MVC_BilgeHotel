@@ -53,8 +53,10 @@
     <Compile Include="Entities\Booking.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\CustomerBooking.cs" />
+    <Compile Include="Entities\VMs\CustomerBookingsVM.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Room.cs" />
+    <Compile Include="Entities\VMs\RoomBookingVM.cs" />
     <Compile Include="Enums\BookingPackages.cs" />
     <Compile Include="Enums\Roles.cs" />
     <Compile Include="Enums\RoomStatus.cs" />

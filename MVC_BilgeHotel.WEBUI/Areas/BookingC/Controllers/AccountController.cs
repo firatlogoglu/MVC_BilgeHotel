@@ -41,7 +41,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                         TempData["CustomerUser"] = customerUserDetail.FirstName + " " + customerUserDetail.SurName;
                         TempData["CustomerID"] = customerUserDetail.ID;
                         return RedirectToAction("Index", "Home");
-
                     }
                     else
                     {
@@ -101,6 +100,8 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     model.User = true;
                     db.Add(model);
 
+                    //TODO OOP BLL KATMANI GÜNCELLENCEK
+                    TempData["CustomerAddSuccessful"] = "Sayın " + model.FirstName + " " + model.SurName + ", " + "Kayıt işlemini başarılı bir şeklide gerçekleşmiştir.";
                     return RedirectToAction("RegisterSuccess", "Account");
                 }
             }
@@ -110,9 +111,14 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
             }
         }
 
-        [CustomerAuthFilter]
         public ActionResult RegisterSuccess()
         {
+            string data;
+            if (TempData["CustomerAddSuccessful"] != null)
+                data = TempData["CustomerAddSuccessful"] as string;
+
+            TempData.Keep();
+
             return View();
         }
 

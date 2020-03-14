@@ -19,10 +19,10 @@ namespace MVC_BilgeHotel.MODEL.Map
 
             Property(x => x.CostomerCount).HasColumnName("CstmerCount");
             Property(x => x.Paid).HasColumnName("Paid");
-            Property(x => x.TotalDays).HasColumnName("TDays");
-            Property(x => x.TotalPrice).HasColumnName("TPrice");
+            Property(x => x.TotalDays).HasColumnName("TDays").IsOptional();
+            Property(x => x.TotalPrice).HasColumnName("TPrice").IsOptional();
             Property(x => x.UnitPrice).HasColumnName("UntPrice");
-            Property(x => x.ExtraPrice).HasColumnName("ExPrice");
+            Property(x => x.ExtraPrice).HasColumnName("ExPrice").IsOptional();
         }
     }
 }

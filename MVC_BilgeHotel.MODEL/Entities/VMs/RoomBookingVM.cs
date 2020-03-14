@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MVC_BilgeHotel.WEBUI.Models.VM
+namespace MVC_BilgeHotel.MODEL.Entities.VMs
 {
     public class RoomBookingVM
     {
