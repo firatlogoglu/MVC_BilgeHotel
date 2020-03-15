@@ -1,4 +1,4 @@
-﻿using MVC_BilgeHotel.CORE.Enums;
+﻿using MVC_BilgeHotel.CORE.Enums.Person;
 using System;
 using System.Collections.Generic;
 using System.Linq;
