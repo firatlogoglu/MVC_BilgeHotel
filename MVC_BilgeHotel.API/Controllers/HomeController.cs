@@ -29,6 +29,7 @@ namespace MVC_BilgeHotel.API.Controllers
                 c.Gender = item.Gender;
                 c.PhoneNumber = item.PhoneNumber;
                 c.Address = item.Address;
+                c.BloodType = item.BloodType;
                 customerVMs.Add(c);
             }
             return Ok(customerVMs);

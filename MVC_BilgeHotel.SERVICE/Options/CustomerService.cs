@@ -83,7 +83,7 @@ namespace MVC_BilgeHotel.SERVICE.Options
              .Join(db.Customers,
              cb => cb.CustomerID,
              c => c.ID,
-             (cb, c) => new { c.TCNO, c.FirstName, c.SurName, c.BirthDate, c.BirthPlace, c.Gender, c.PhoneNumber, c.Address });
+             (cb, c) => new { c.TCNO, c.FirstName, c.SurName, c.BirthDate, c.BirthPlace, c.Gender, c.PhoneNumber, c.Address, c.BloodType });
 
             foreach (var item in sonuc)
             {
@@ -94,6 +94,7 @@ namespace MVC_BilgeHotel.SERVICE.Options
                 customer.BirthDate = item.BirthDate;
                 customer.BirthPlace = item.BirthPlace;
                 customer.Gender = item.Gender;
+                customer.BloodType = item.BloodType;
                 customer.PhoneNumber = item.PhoneNumber;
                 customer.Address = item.Address;
                 customers.Add(customer);

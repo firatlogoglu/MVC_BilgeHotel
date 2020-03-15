@@ -115,6 +115,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
 
         public ActionResult BookingCustomers()
         {
+            //TODO: VM KULLANILACAK
             return View(cbs.GetAll().ToList());
         }
     }

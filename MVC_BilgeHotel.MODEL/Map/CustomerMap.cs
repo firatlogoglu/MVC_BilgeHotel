@@ -17,6 +17,7 @@ namespace MVC_BilgeHotel.MODEL.Map
             Property(x => x.SurName).HasMaxLength(50).HasColumnName("SName");
             Property(x => x.Password).HasMaxLength(20).HasColumnName("Pswrd");
             Property(x => x.Gender).HasColumnName("Gender");
+            Property(x => x.BloodType).HasColumnName("BloodType");
 
             Property(x => x.PhoneNumber).HasColumnName("PhoneNo");
             Property(x => x.EmailAddress).HasMaxLength(50).HasColumnName("EMailAdrs");

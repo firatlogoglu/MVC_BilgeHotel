@@ -190,6 +190,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     cus.BirthDate = customerBookingsVM.BirthDate;
                     cus.BirthPlace = customerBookingsVM.BirthPlace;
                     cus.Gender = customerBookingsVM.Gender;
+                    cus.BloodType = customerBookingsVM.BloodType;
 
                     cus.PhoneNumber = customerBookingsVM.PhoneNumber;
                     cus.Address = customerBookingsVM.Address;

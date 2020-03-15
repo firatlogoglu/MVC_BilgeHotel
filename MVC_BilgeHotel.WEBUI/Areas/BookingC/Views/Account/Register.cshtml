@@ -39,6 +39,8 @@
 
         @Html.EnumDropDownListFor(x => x.Gender, htmlAttributes: new { @class = "form-control" })
 
+        @Html.EnumDropDownListFor(x => x.BloodType, htmlAttributes: new { @class = "form-control" })
+
         <button class="btn btn-lg btn-login btn-block" type="submit">@ViewBag.Title</button>
         <div class="registration">
             <a class="" href="@Url.Action("Login", "Account")">

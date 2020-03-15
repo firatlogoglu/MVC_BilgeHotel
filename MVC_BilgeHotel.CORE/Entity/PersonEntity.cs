@@ -42,5 +42,8 @@ namespace MVC_BilgeHotel.CORE.Entity
 
         [Display(Name = "Cinsiyet")]
         public Gender Gender { get; set; }
+
+        [Display(Name = "Kan Grubu")]
+        public BloodType BloodType { get; set; }
     }
 }

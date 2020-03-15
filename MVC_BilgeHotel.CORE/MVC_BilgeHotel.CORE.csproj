@@ -51,6 +51,7 @@
     <Compile Include="Entity\CoreEntity.cs" />
     <Compile Include="Entity\IEntity.cs" />
     <Compile Include="Entity\PersonEntity.cs" />
+    <Compile Include="Enums\Person\BloodType.cs" />
     <Compile Include="Enums\Person\Gender.cs" />
     <Compile Include="Enums\GeneralStatus.cs" />
     <Compile Include="Map\CoreMap.cs" />
