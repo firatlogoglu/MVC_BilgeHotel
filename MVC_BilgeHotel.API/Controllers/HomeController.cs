@@ -27,6 +27,7 @@ namespace MVC_BilgeHotel.API.Controllers
                 c.BirthDate = item.BirthDate;
                 c.BirthPlace = item.BirthPlace;
                 c.Gender = item.Gender;
+                c.MaritalState = item.MaritalState;
                 c.PhoneNumber = item.PhoneNumber;
                 c.Address = item.Address;
                 c.BloodType = item.BloodType;

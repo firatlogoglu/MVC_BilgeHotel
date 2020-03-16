@@ -18,5 +18,6 @@ namespace MVC_BilgeHotel.API.Models
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
         public BloodType BloodType { get; set; }
+        public MaritalState MaritalState { get; set; }
     }
 }

@@ -52,6 +52,9 @@
         <th>
             @Html.DisplayNameFor(model => model.BloodType)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalState)
+        </th>
         <th></th>
     </tr>
 
@@ -78,6 +81,9 @@
             </td>
             <td>
                 @Html.EnumDropDownListFor(modelItem => item.BloodType, new { @disabled = "disabled" })
+            </td>
+            <td>
+                @Html.EnumDropDownListFor(modelItem => item.MaritalState, new { @disabled = "disabled" })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |

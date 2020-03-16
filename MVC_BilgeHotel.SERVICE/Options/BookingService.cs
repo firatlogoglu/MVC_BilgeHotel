@@ -131,6 +131,7 @@ namespace MVC_BilgeHotel.SERVICE.Options
                 cbv.SurName = item.cus.SurName;
                 cbv.Gender = item.cus.Gender;
                 cbv.BloodType = item.cus.BloodType;
+                cbv.MaritalState = item.cus.MaritalState;
 
                 cbv.BirthDate = item.cus.BirthDate;
                 cbv.BirthPlace = item.cus.BirthPlace;

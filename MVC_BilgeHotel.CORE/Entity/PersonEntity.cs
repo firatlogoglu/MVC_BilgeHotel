@@ -45,5 +45,8 @@ namespace MVC_BilgeHotel.CORE.Entity
 
         [Display(Name = "Kan Grubu")]
         public BloodType BloodType { get; set; }
+
+        [Display(Name = "Medeni Hali")]
+        public MaritalState MaritalState { get; set; }
     }
 }

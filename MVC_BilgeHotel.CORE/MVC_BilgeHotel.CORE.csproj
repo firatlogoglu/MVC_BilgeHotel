@@ -54,6 +54,7 @@
     <Compile Include="Enums\Person\BloodType.cs" />
     <Compile Include="Enums\Person\Gender.cs" />
     <Compile Include="Enums\GeneralStatus.cs" />
+    <Compile Include="Enums\Person\MaritalState.cs" />
     <Compile Include="Map\CoreMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ICoreService.cs" />
