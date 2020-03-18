@@ -113,10 +113,16 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
             return View();
         }
 
-        public ActionResult BookingCustomers()
+        public ActionResult BookingCustomers(Guid id)
         {
-            //TODO: VM KULLANILACAK
-            return View(cbs.GetAll().ToList());
+            string data;
+            if (TempData["BookingCustomerSuccessful"] != null)
+                data = TempData["BookingCustomerSuccessful"] as string;
+
+            TempData.Keep();
+
+            var dd = sdb.FindcustomerBookings(id);
+            return View(dd);
         }
     }
 }

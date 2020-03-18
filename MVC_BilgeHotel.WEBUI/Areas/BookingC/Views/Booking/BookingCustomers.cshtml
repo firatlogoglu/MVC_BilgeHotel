@@ -8,12 +8,20 @@
 
 <h2>@ViewBag.Title</h2>
 
-<hr />
 @{
+    if (TempData["BookingCustomerSuccessful"] != null)
+    {
+        <hr />
+    }
+
     @TempData["BookingCustomerSuccessful"]
     TempData["BookingCustomerSuccessful"] = null;
+
+    if (TempData["BookingCustomerSuccessful"] != null)
+    {
+        <hr />
+    }
 }
-<hr />
 
 <p>
     @foreach (var item in Model)

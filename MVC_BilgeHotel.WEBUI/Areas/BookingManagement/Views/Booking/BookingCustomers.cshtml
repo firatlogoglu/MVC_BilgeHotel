@@ -1,55 +1,67 @@
-﻿@model IEnumerable<MVC_BilgeHotel.MODEL.Entities.CustomerBooking>
+﻿@model IEnumerable<CustomerBookingsVM>
 
 @{
-    ViewBag.Title = "BookingCustomers";
-    Layout = "~/Areas/BookingC/Views/Shared/_BookingCLLayout.cshtml";
+    int i = 1;
+    ViewBag.Title = "Rezervasyondaki Kişiler";
+    Layout = "~/Areas/BookingManagement/Views/Shared/_BookingHLLayout.cshtml";
 }
 
-<h2>BookingCustomers</h2>
+<h2>@ViewBag.Title</h2>
+
+@{
+    if (TempData["BookingCustomerSuccessful"] != null)
+    {
+        <hr />
+    }
+
+    @TempData["BookingCustomerSuccessful"]
+    TempData["BookingCustomerSuccessful"] = null;
+
+    if (TempData["BookingCustomerSuccessful"] != null)
+    {
+        <hr />
+    }
+}
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @foreach (var item in Model)
+    {
+
+        if (item.AddCostomerCount != item.CostomerCount && i == 1)
+        {
+            @Html.ActionLink("Kişi Ekle", "FindCustomer", new { BookingID = item.BookingID })
+            <br />
+
+            i = i + 1;
+        }
+    }
+
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Booking.Description)
+            @Html.DisplayNameFor(model => model.TCNO)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.TCNO)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GeneralStatus)
+            @Html.DisplayNameFor(model => model.SurName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
+            @Html.DisplayNameFor(model => model.BirthDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ModifiedDate)
+            @Html.DisplayNameFor(model => model.BirthPlace)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedComputerName)
+            @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ModifiedComputerName)
+            @Html.DisplayNameFor(model => model.BloodType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModifiedIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedComputerUsername)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModifiedComputerUsername)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUserID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModifiedUserID)
+            @Html.DisplayNameFor(model => model.MaritalState)
         </th>
         <th></th>
     </tr>
@@ -58,48 +70,31 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Booking.Description)
+                @Html.DisplayFor(modelItem => item.TCNO)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Customer.TCNO)
+                @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GeneralStatus)
+                @Html.DisplayFor(modelItem => item.SurName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
+                @Html.DisplayFor(modelItem => item.BirthDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedDate)
+                @Html.DisplayFor(modelItem => item.BirthPlace)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedComputerName)
+                @Html.EnumDropDownListFor(modelItem => item.Gender, new { @disabled = "disabled" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModifiedComputerName)
+                @Html.EnumDropDownListFor(modelItem => item.BloodType, new { @disabled = "disabled" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedIP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedIP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedComputerUsername)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedComputerUsername)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUserID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedUserID)
+                @Html.EnumDropDownListFor(modelItem => item.MaritalState, new { @disabled = "disabled" })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
             </td>
         </tr>
     }
