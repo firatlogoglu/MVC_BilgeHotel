@@ -56,6 +56,7 @@
     <Compile Include="Entities\VMs\CustomerBookingsVM.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Room.cs" />
+    <Compile Include="Entities\VMs\CustomerVM.cs" />
     <Compile Include="Entities\VMs\RoomBookingVM.cs" />
     <Compile Include="Enums\BookingPackages.cs" />
     <Compile Include="Enums\Roles.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="Map\RoomMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticMessages\ErrorMessages\TR\EPerson.cs" />
+    <Compile Include="StaticMessages\SuccessfulMessages\TR\SPerson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\EntityFramework.dll" />
@@ -115,6 +118,7 @@
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\TempPE\" />
+    <Folder Include="StaticMessages\InformationMessages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

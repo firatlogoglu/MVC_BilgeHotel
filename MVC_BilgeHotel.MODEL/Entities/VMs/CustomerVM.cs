@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MVC_BilgeHotel.API.Models
+namespace MVC_BilgeHotel.MODEL.Entities.VMs
 {
     public class CustomerVM
     {

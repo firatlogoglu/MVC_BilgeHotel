@@ -1,5 +1,6 @@
 ﻿using MVC_BilgeHotel.COMMON.Tools;
 using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.MODEL.StaticMessages.ErrorMessages.TR;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
@@ -47,7 +48,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
                     }
                     else
                     {
-                        TempData["Error"] = "Lüften E-Posta Adresiniz ve/veya Şifrenizi Kontrol Ediniz";
+                        TempData["Error"] = EPerson.EmailAdrresPasswordWrongTR;
                     }
                 }
                 else

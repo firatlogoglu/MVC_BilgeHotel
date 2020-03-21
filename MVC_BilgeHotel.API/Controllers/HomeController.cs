@@ -1,4 +1,4 @@
-﻿using MVC_BilgeHotel.API.Models;
+﻿using MVC_BilgeHotel.MODEL.Entities.VMs;
 using MVC_BilgeHotel.SERVICE.Options;
 using System;
 using System.Collections.Generic;

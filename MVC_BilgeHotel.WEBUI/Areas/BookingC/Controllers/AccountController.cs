@@ -1,4 +1,6 @@
 ﻿using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.MODEL.StaticMessages.ErrorMessages.TR;
+using MVC_BilgeHotel.MODEL.StaticMessages.SuccessfulMessages.TR;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
@@ -44,7 +46,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     }
                     else
                     {
-                        TempData["Error"] = "Lüften E-Posta Adresiniz ve/veya Şifrenizi Kontrol Ediniz";
+                        TempData["Error"] = EPerson.EmailAdrresPasswordWrongTR;
                     }
                 }
                 else
@@ -101,7 +103,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     db.Add(model);
 
                     //TODO OOP BLL KATMANI GÜNCELLENCEK
-                    TempData["CustomerAddSuccessful"] = "Sayın " + model.FirstName + " " + model.SurName + ", " + "Kayıt işlemini başarılı bir şeklide gerçekleşmiştir.";
+                    TempData["CustomerAddSuccessful"] = "Sayın " + model.FirstName + " " + model.SurName + ", " + SPerson.RegistrationSuccessfulTR;
                     return RedirectToAction("RegisterSuccess", "Account");
                 }
             }

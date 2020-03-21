@@ -10,7 +10,6 @@ namespace MVC_BilgeHotel.CORE.Entity
 {
     public class PersonEntity : CoreEntity
     {
-
         [Required(ErrorMessage = "Lütfen T.C numaranızı girin"), Display(Name = "TC Kimlik No")]
         public string TCNO { get; set; }
 
