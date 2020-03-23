@@ -76,6 +76,7 @@
     <None Include="bin\Release\MVC_BilgeHotel.SERVICE.dll.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\MVC_BilgeHotel.SERVICE.csproj.CopyComplete" />
+    <None Include="obj\Debug\MVC_BilgeHotel.SERVICE.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\MVC_BilgeHotel.SERVICE.csprojAssemblyReference.cache" />
     <None Include="obj\Release\MVC_BilgeHotel.SERVICE.csproj.CopyComplete" />
     <None Include="obj\Release\MVC_BilgeHotel.SERVICE.csprojAssemblyReference.cache" />

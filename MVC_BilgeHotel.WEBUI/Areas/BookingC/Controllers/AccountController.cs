@@ -1,7 +1,7 @@
 ﻿using MVC_BilgeHotel.MODEL.Entities;
-using MVC_BilgeHotel.MODEL.StaticMessages.ErrorMessages.TR;
-using MVC_BilgeHotel.MODEL.StaticMessages.SuccessfulMessages.TR;
 using MVC_BilgeHotel.SERVICE.Options;
+using MVC_BilgeHotel.STATICMASSAGES.ErrorMessages.TR;
+using MVC_BilgeHotel.STATICMASSAGES.SuccessfulMessages.TR;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
 using System.Collections.Generic;

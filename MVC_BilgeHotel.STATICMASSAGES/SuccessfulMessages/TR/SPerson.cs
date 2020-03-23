@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MVC_BilgeHotel.MODEL.StaticMessages.SuccessfulMessages.TR
+namespace MVC_BilgeHotel.STATICMASSAGES.SuccessfulMessages.TR
 {
     /// <summary>
     /// Bu kütüphane tüm kullancılarla ilgi başarılı işlemler sonrasında kullanıcıya gösterilecek olan statik mesajları içerir.
