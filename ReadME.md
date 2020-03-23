@@ -72,6 +72,11 @@
 <h4> NOT:MailSender isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
 <h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
 
-### 6 - MVC_BilgeHotel.API
+### 6 - MVC_BilgeHotel.STATICMASSAGES
+#### Error Messages
+#### Information Messages
+#### Successful Messages
+
+### 7 - MVC_BilgeHotel.API
 #### Controllers
 * HomeController: FullRoomsCustomers, O günkü odalarda kalan müşterileri XML formatında getirir.
