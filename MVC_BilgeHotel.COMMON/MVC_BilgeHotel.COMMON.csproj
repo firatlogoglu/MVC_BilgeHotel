@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC_BilgeHotel.COMMON</RootNamespace>
     <AssemblyName>MVC_BilgeHotel.COMMON</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,30 +56,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\MVC_BilgeHotel.COMMON.dll.config" />
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.CopyComplete" />
-    <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\MVC_BilgeHotel.COMMON.csprojAssemblyReference.cache" />
-    <None Include="obj\Release\MVC_BilgeHotel.COMMON.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="bin\Debug\EntityFramework.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.COMMON.dll" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.COMMON.pdb" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.dll" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.COMMON.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="obj\Release\TempPE\" />
+    <ProjectReference Include="..\MVC_BilgeHotel.CORE\MVC_BilgeHotel.CORE.csproj">
+      <Project>{b2fa6ec5-079b-4b4e-8d57-c2fbff0c135e}</Project>
+      <Name>MVC_BilgeHotel.CORE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC_BilgeHotel.MODEL\MVC_BilgeHotel.MODEL.csproj">
+      <Project>{3200674F-F578-4047-998E-F9AC35A3A05D}</Project>
+      <Name>MVC_BilgeHotel.MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

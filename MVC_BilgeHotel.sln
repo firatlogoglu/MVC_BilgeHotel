@@ -17,6 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_BilgeHotel.API", "MVC_B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_BilgeHotel.STATICMASSAGES", "MVC_BilgeHotel.STATICMASSAGES\MVC_BilgeHotel.STATICMASSAGES.csproj", "{F5DA742C-6881-4A8C-A831-5BB45FE996A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23F2D4C3-1044-4F19-9A01-80A13F486E6C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		ReadME.md = ReadME.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

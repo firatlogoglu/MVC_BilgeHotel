@@ -1,15 +1,12 @@
 ﻿using MVC_BilgeHotel.MODEL.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MVC_BilgeHotel.MODEL.Entities.VMs
 {
     public class RoomBookingVM
     {
-        public Guid ID { get; set; } 
+        public Guid ID { get; set; }
         public string RoomNumber { get; set; }
 
         public int Capacity { get; set; }
@@ -20,15 +17,14 @@ namespace MVC_BilgeHotel.MODEL.Entities.VMs
 
         public RoomTypes RoomTypes { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime InDate { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime OutDate { get; set; }
 
         public int CostomerCount { get; set; }
 
-  
         public decimal UnitPrice { get; set; }
 
         public decimal ExtraPrice { get; set; }

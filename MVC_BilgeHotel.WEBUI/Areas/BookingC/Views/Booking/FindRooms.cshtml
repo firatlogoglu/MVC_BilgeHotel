@@ -46,7 +46,7 @@
                 <td>@room.GeneralStatus</td>
 
                 <td>
-                    @Html.ActionLink("Seç", "Create", new { RoomID = room.ID, InDate = TempData["InDate"], OutDate = TempData["OutDate"], CostomerCount = TempData["CostomerCount"] }) <i class="glyphicon glyphicon-star"></i>
+                    @Html.ActionLink("Seç", "Create", new { RoomID = room.ID, InDate = TempData["InDate"] , OutDate = TempData["OutDate"], CostomerCount = TempData["CostomerCount"] }) <i class="glyphicon glyphicon-star"></i>
                 </td>
             </tr>
         }

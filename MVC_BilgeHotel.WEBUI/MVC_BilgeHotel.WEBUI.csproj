@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC_BilgeHotel.WEBUI</RootNamespace>
     <AssemblyName>MVC_BilgeHotel.WEBUI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,24 +46,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -108,6 +109,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -115,11 +117,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,48 +146,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\MVC_BilgeHotel.COMMON.dll" />
-    <Content Include="bin\MVC_BilgeHotel.COMMON.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.dll" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.WEBUI.dll" />
-    <Content Include="bin\MVC_BilgeHotel.WEBUI.pdb" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\csi.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -199,13 +154,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="obj\Debug\build.force" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.CopyComplete" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csprojAssemblyReference.cache" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.dll" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\BookingManagement\Views\web.config" />
@@ -251,20 +199,7 @@
     <Content Include="Areas\BookingC\Views\Booking\FindCustomer.cshtml" />
     <Content Include="Areas\BookingC\Views\Booking\FindAddCustomer.cshtml" />
     <Content Include="Areas\BookingManagement\Views\Account\AccountDetail.cshtml" />
-    <Content Include="bin\MVC_BilgeHotel.COMMON.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.WEBUI.dll.config" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.WEBUI.csproj.CoreCompileInputs.cache" />
+    <Content Include="Areas\BookingC\Views\Booking\Ticket.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -310,9 +245,7 @@
     <Folder Include="Areas\BookingC\Data\" />
     <Folder Include="Areas\BookingManagement\Data\" />
     <Folder Include="Areas\HotelManegement\Data\" />
-    <Folder Include="bin\tr\" />
     <Folder Include="Models\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -377,11 +310,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

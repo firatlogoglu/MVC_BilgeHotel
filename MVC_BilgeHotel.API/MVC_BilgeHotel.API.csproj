@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC_BilgeHotel.API</RootNamespace>
     <AssemblyName>MVC_BilgeHotel.API</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -23,6 +22,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,7 +49,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
@@ -60,19 +64,17 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -87,61 +89,9 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\MVC_BilgeHotel.API.dll" />
-    <Content Include="bin\MVC_BilgeHotel.API.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.dll" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.pdb" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.pdb" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\csi.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Net.Http.Formatting.dll" />
-    <Content Include="bin\System.Net.Http.Formatting.xml" />
-    <Content Include="bin\System.Web.Cors.dll" />
-    <Content Include="bin\System.Web.Http.Cors.dll" />
-    <Content Include="bin\System.Web.Http.Cors.xml" />
-    <Content Include="bin\System.Web.Http.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.xml" />
-    <Content Include="bin\System.Web.Http.xml" />
-    <Content Include="bin\tr\System.Net.Http.Formatting.resources.dll" />
-    <Content Include="bin\tr\System.Web.Http.resources.dll" />
-    <Content Include="bin\tr\System.Web.Http.WebHost.resources.dll" />
     <Content Include="Global.asax" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.API.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.API.dll" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.API.pdb" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -153,22 +103,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\MVC_BilgeHotel.API.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.CORE.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.MODEL.dll.config" />
-    <Content Include="bin\MVC_BilgeHotel.SERVICE.dll.config" />
-    <Content Include="obj\Debug\build.force" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.API.csproj.CopyComplete" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.API.csprojAssemblyReference.cache" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -180,7 +114,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MVC_BilgeHotel.CORE\MVC_BilgeHotel.CORE.csproj">
@@ -221,11 +154,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

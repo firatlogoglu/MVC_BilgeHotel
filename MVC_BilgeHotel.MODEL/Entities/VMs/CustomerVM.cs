@@ -1,8 +1,5 @@
 ﻿using MVC_BilgeHotel.CORE.Enums.Person;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace MVC_BilgeHotel.MODEL.Entities.VMs
 {

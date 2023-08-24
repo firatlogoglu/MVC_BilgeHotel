@@ -1,0 +1,114 @@
+﻿@model MVC_BilgeHotel.MODEL.Entities.Booking
+
+@{
+    ViewBag.Title = "Ticket";
+    Layout = "~/Areas/BookingC/Views/Shared/_BookingCLLayout.cshtml";
+}
+
+<h2>Ticket</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="inDateLabel">@Html.DisplayNameFor(model => model.InDate)</dt>
+        <dd id="inDateText">@Html.DisplayFor(model => model.InDate)</dd>
+
+        <dt id="outDateLabel">@Html.DisplayNameFor(model => model.OutDate)</dt>
+        <dd id="outDateText">@Html.DisplayFor(model => model.OutDate)</dd>
+
+        <dt id="roomNubLabel">@Html.DisplayNameFor(model => model.Room.RoomNumber)</dt>
+        <dd id="roomNubText">@Html.DisplayFor(model => model.Room.RoomNumber)</dd>
+
+        <dt id="costomerCountLabel">@Html.DisplayNameFor(model => model.CostomerCount)</dt>
+        <dd id="costomerCountText">(@Html.DisplayFor(model => model.AddCostomerCount)/@Html.DisplayFor(model => model.CostomerCount))</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GeneralStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GeneralStatus)
+        </dd>
+    </dl>
+
+    @*<form id="form">
+        @foreach (var item in ViewBag.Text)
+        {
+            item.TCNO + " " + item.FirstName + " " + item.SurName;
+        }
+    </form>*@
+
+
+
+
+
+    </div>
+    <p>
+        <button class="btn btn-info" onclick="TicketPDF()">Bileti Yazdır</button>
+        @Html.ActionLink("Back to List", "Index")
+    </p>

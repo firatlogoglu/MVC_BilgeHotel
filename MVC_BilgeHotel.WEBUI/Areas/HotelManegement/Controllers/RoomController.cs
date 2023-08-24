@@ -3,9 +3,7 @@ using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 
@@ -47,10 +45,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             if (ModelState.IsValid)
             {
                 model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Rooms/", ImagePath);
-
-                model.ModifiedComputerName = Environment.MachineName;
-                model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
-                model.ModifiedDate = DateTime.Now;
 
                 rmdb.Update(model);
                 return RedirectToAction("Index");

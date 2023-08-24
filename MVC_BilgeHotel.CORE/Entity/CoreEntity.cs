@@ -1,11 +1,6 @@
 ﻿using MVC_BilgeHotel.CORE.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MVC_BilgeHotel.CORE.Entity
 {
@@ -14,15 +9,6 @@ namespace MVC_BilgeHotel.CORE.Entity
         public CoreEntity()
         {
             this.GeneralStatus = GeneralStatus.Active;
-
-            this.CreatedDate = DateTime.Now;
-            this.CreatedComputerName = Environment.MachineName;
-            this.CreatedComputerUsername = WindowsIdentity.GetCurrent().Name;
-
-            // Eklendi using System.Security.Principal;
-
-            this.CreatedIP = "192.168.1.1";
-            this.CreatedUserID = 1;
         }
 
         [Key]

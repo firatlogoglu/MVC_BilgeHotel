@@ -1,13 +1,9 @@
-﻿using MVC_BilgeHotel.MODEL.Context;
-using MVC_BilgeHotel.MODEL.Entities;
+﻿using MVC_BilgeHotel.MODEL.Entities;
+using MVC_BilgeHotel.MODEL.Entities.VMs;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
-using MVC_BilgeHotel.MODEL.Entities.VMs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
@@ -34,27 +30,22 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
             return View(sdb.FindBookings(customerUserDetail.ID));
         }
 
-        public ActionResult Find()
+        public ActionResult Find(RoomBookingVM roomBooking)
         {
+            //TODO: Parametre parantezi kontroller edilecek.
             return View();
         }
 
         [HttpPost]
         public ActionResult FindRooms(RoomBookingVM roomBooking)
         {
-            int inyear = roomBooking.InDate.Year;
-            int inday = roomBooking.InDate.Day;
-            int inmonth = roomBooking.InDate.Month;
+            if (roomBooking.OutDate <= roomBooking.InDate)
+            {
+                return RedirectToAction("Find", "Booking", new { roomBooking.InDate, roomBooking.OutDate, roomBooking.ID, roomBooking.CostomerCount });
+            }
 
-            int outyear = roomBooking.OutDate.Year;
-            int outday = roomBooking.OutDate.Day;
-            int outmonth = roomBooking.OutDate.Month;
-
-            DateTime dateTimeIn = new DateTime(inyear, inmonth, inday);
-            DateTime dateTimeOut = new DateTime(outyear, outmonth, outday);
-
-            TempData["InDate"] = dateTimeIn.ToString().Remove(10, 9);
-            TempData["OutDate"] = dateTimeOut.ToString().Remove(10, 9);
+            TempData["InDate"] = roomBooking.InDate.ToString("dd.MM.yyyy");
+            TempData["OutDate"] = roomBooking.OutDate.ToString("dd.MM.yyyy");
             TempData["CostomerCount"] = roomBooking.CostomerCount;
             return View(sdb.EmptyRooms(roomBooking.InDate, roomBooking.OutDate, roomBooking.CostomerCount));
         }
@@ -239,7 +230,7 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                             b.AddCostomerCount = b.AddCostomerCount + 1;
                             sdb.Update(b);
 
-                            TempData["BookingCustomerSuccessful"] = cus.FirstName + " " + cus.SurName + " " + "Hotel kaytılarına eklendi. Rezevasyona başarılı bir şekilde eklen.";
+                            TempData["BookingCustomerSuccessful"] = cus.FirstName + " " + cus.SurName + " " + "Hotel kaytılarına eklendi. Rezevasyona başarılı bir şekilde eklendi.";
                             return RedirectToAction("BookingCustomers", new { ID = cb.BookingID });
                         }
                     }
@@ -264,6 +255,13 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingC.Controllers
                     return RedirectToAction("BookingCustomers", "Booking", new { ID = b.ID });
                 }
             }
+        }
+        public ActionResult Ticket(Guid id)
+        {
+            var dd = sdb.FindcustomerBookings(id);
+
+            ViewBag.Text = dd;
+            return View(sdb.GetByID(id));
         }
     }
 }

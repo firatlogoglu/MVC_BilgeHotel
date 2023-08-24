@@ -1,10 +1,6 @@
 ﻿using MVC_BilgeHotel.CORE.Entity;
-using MVC_BilgeHotel.MODEL.Entities;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MVC_BilgeHotel.MODEL.Entities.VMs
 {

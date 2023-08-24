@@ -3,9 +3,7 @@ using MVC_BilgeHotel.MODEL.Entities;
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 
@@ -56,9 +54,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.HotelManegement.Controllers
             if (ModelState.IsValid)
             {
                 //TODO: Düzenleme sırasında resim değişmediğinde resimi boş olarak değiştiriyor.
-                model.ModifiedComputerName = Environment.MachineName;
-                model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
-                model.ModifiedDate = DateTime.Now;
                 model.ImagePath = ImagesUploader.UploadSingleImage("~/Uploads/Img/Employee/", ImagePath);
                 model.TotalPay = ((model.Hours + model.EkstraHours) * model.HourlyPay) * model.Days;
 

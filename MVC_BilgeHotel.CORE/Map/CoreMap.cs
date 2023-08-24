@@ -1,10 +1,5 @@
 ﻿using MVC_BilgeHotel.CORE.Entity;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MVC_BilgeHotel.CORE.Map
 {
@@ -16,7 +11,7 @@ namespace MVC_BilgeHotel.CORE.Map
 
             Property(x => x.GeneralStatus).HasColumnName("GStatus");
 
-            Property(x => x.CreatedDate).HasColumnName("CrtdDate");           
+            Property(x => x.CreatedDate).HasColumnName("CrtdDate");
             Property(x => x.CreatedIP).HasMaxLength(50).HasColumnName("CrtdIP");
             Property(x => x.CreatedComputerUsername).HasMaxLength(50).HasColumnName("CrtdCUsrName");
             Property(x => x.CreatedComputerName).HasMaxLength(50).HasColumnName("CrtdCmpName");

@@ -2,17 +2,13 @@
 using MVC_BilgeHotel.SERVICE.Options;
 using MVC_BilgeHotel.WEBUI.Filters.AuthorizationFilters;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
 {
     //TODO: Yeni rezervasyon ekle ayarlanacak - Kişi ekleme - ODO - ödeme vs.
-    //TODO: Çalışan kendi kişisel bilgilerini gösteme ve değiştirme sayfası yapılacak    
-    //TODO: O GÜN AYRILACAK VE GİRİŞ YAPACA REZARFONLAR ANA SAYFADA GÖRÜTÜLE
+    //TODO: Çalışan kendi kişisel bilgilerini gösterme ve değiştirme sayfası yapılacak    
+    //TODO: O GÜN AYRILACAK VE GİRİŞ YAPINCA REZERVASYON ANA SAYFADA GÖRÜNTÜLE
     [BookingMAuthFilter]
     public class BookingController : Controller
     {
@@ -102,10 +98,6 @@ namespace MVC_BilgeHotel.WEBUI.Areas.BookingManagement.Controllers
                 {
                     model.TotalPrice = (model.UnitPrice * model.TotalDays);
                 }
-
-                model.ModifiedComputerName = Environment.MachineName;
-                model.ModifiedComputerUsername = WindowsIdentity.GetCurrent().Name;
-                model.ModifiedDate = DateTime.Now;
 
                 sdb.Update(model);
                 return RedirectToAction("Index");

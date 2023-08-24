@@ -34,12 +34,9 @@
 * CustomerBookingMap
 #### 2.4 - Context
 * ProjectContext: Context nesnemizdir.
-<h4> NOT:ProjectContext isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
-<h4> NOT:ProjectContext SQL Server bağlatı ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
-
 * SampleData: Örnek verilerimizin bulunduğu classtır.
 #### 2.5 - Migrations
-* Configuration içerisine 2.4 Context içerisinde yer alan SampleData instece alınarak Seed metotun içerisine verilmiştir.
+* Configuration içerisine 2.4 Context içerisinde yer alan SampleData instance alınarak Seed metotun içerisine verilmiştir.
 ### 3 - MVC_BilgeHotel.SERVICE/BLL (İş Katmanı) 
 #### 3.1 - Base
 * BaseSerice: Tüm Etitylerde bulunan belli başlı CRUD ve Listeleme işlemleri tanımlanmıştır.
@@ -67,16 +64,35 @@
 ### 5 - MVC_BilgeHotel.COMMON
 #### Tools/Araçlar
 * ImagesUploader/Resim Yükleyicisi
-
 * MailSender/E-Posta Göndericisi
-<h4> NOT:MailSender isminin sonundaki "[Copy(Kopyası)]" yazısını silin ve projeye dahil edin.</h4>
-<h4> NOT:MailSender: E-Posta SMTP Servis gönderim ayarlarınızı verin (TODOLARI OKUYUN!!!)</h4>
 
 ### 6 - MVC_BilgeHotel.STATICMASSAGES
 #### Error Messages
 #### Information Messages
 #### Successful Messages
 
-### 7 - MVC_BilgeHotel.API
+### 7 - MVC_BilgeHotel.API (Sunum Katmanı)
 #### Controllers
 * HomeController: FullRoomsCustomers, O günkü odalarda kalan müşterileri XML formatında getirir.
+
+## Çalıştırılmadan Önce Yapılacak Ayarlar
+* 1.) MVC_BilgeHotel.WEBUI ve MVC_BilgeHotel.API ilk etapta başlangıç projeleri olarak ayarlanması gerekiyor: Çözüm Gezgini'de (Solution Explorer'da) <b>“Solution 'MVC_BilgeHotel'/Çözüm 'MVC_BilgeHotel' ”</b> e Sağ tıklayıp. <b>“Set StartUp Projects.../Başlangıç Projelarini Olarak Ayarla...”</b> ya tıklayın. <b>“Birden fazla başlangıç projesi:/Multiple startup projects”</b> seçin. Ardından <b>MVC_BilgeHotel.WEBUI</b> ve <b>MVC_BilgeHotel.API</b> projelerin <b>Action/Eylem</b> kısmına <b>Start/Başla</b> yapıp <b>“OK/Tamam”</b> a tıklayın.
+
+* 2.) SQL Database Server'ın yolu varsayılan olarak ayarlıdır ("server=.;database=MVCBilgeHotelDB;uid=sa;pwd=123"). Bu yolu, MVC_BilgeHotel.MODEL/Context/ProjectContext.cs dosyası içerisinde değiştirebilirsiniz.
+
+* 3.) NuGet Paket Konsol Yöneticisini kullanarak veritabanını basılması gerekiyor.  
+
+* 4.) Bu programın e-posta gönderebilmesi (gönderici) için, MVC_BilgeHotel.COMMON/Tools/MailSender.cs dosyasının ayarlanması gerekiyor.
+
+* 5.) SampleData içerisindeki veriler kullanıcaksa, sahte (fake) e-posta adreslerine, e-posta gönderecektir. Bu e-posta adresleri gerçek kişi/kurumlara ait olabilir. Bunu engellemek için, MVC_BilgeHotel.COMMON/Tools/MailSender.cs dosyası içerisindeki //email = ""; yorum satırından çıkarılıp, içerisine alcı e-posta adresi olarak kendi e-posta adresinizi eklemek zorundasınız.
+
+* 6.) Proje, ilk kez çalıştırılmasında <b>"...\MVC_BilgeHotel\MVC_BilgeHotel.WEBUI\bin\roslyn\csc.exe' yolunun bir parçası bulunamadı."</b> hata verirse, <b> "bin" klasörünü silin.</b>
+
+## Projedeki Eksik Yerler
+* 1.) Kampanya ve paket işlemleri ve sayfaları tamamlanacak.
+
+* 2.) Bilet(Ticket), Ödeme PDF/Yazdırma işlemleri ve sayfaları tamamlanacak.
+
+* 3.) SpecialDays (Özel Günler) için, resim veya fotoğraf bulunacak.
+
+* 4.) MVC_BilgeHotel.API tarafında güvenlik için Token tanımlaması yapılacak. 

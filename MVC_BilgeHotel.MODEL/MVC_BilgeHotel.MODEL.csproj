@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MVC_BilgeHotel.MODEL</RootNamespace>
     <AssemblyName>MVC_BilgeHotel.MODEL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,40 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\EntityFramework.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.CORE.dll" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.CORE.pdb" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="bin\Debug\MVC_BilgeHotel.MODEL.pdb" />
-    <Content Include="bin\Release\EntityFramework.dll" />
-    <Content Include="bin\Release\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Release\MVC_BilgeHotel.CORE.dll" />
-    <Content Include="bin\Release\MVC_BilgeHotel.CORE.pdb" />
-    <Content Include="bin\Release\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="bin\Release\MVC_BilgeHotel.MODEL.pdb" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="obj\Debug\MVC_BilgeHotel.MODEL.pdb" />
-    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.dll" />
-    <Content Include="obj\Release\MVC_BilgeHotel.MODEL.pdb" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\MVC_BilgeHotel.CORE.dll.config" />
-    <None Include="bin\Debug\MVC_BilgeHotel.MODEL.dll.config" />
-    <None Include="bin\Release\MVC_BilgeHotel.CORE.dll.config" />
-    <None Include="bin\Release\MVC_BilgeHotel.MODEL.dll.config" />
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.CopyComplete" />
-    <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\MVC_BilgeHotel.MODEL.csprojAssemblyReference.cache" />
-    <None Include="obj\Release\MVC_BilgeHotel.MODEL.csproj.CopyComplete" />
-    <None Include="obj\Release\MVC_BilgeHotel.MODEL.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,9 +83,6 @@
       <Name>MVC_BilgeHotel.CORE</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="obj\Release\TempPE\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
